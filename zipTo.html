@@ -1,0 +1,38 @@
+<!--CS361 Team Project:Hiking Everyday-->
+<!--Author: Chang Li-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Test zipcode and city</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSvtEPfdFmrBTOZdwkxk_WsQAslJogFxA&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <script src="zipTo.js"></script>
+</head>
+<body>
+    <!--Find location based on zip code or address-->
+    <form>
+        <fieldset>
+            <!--set input boxes to enter zip code-->
+            <legend>Find nearby Trail</legend>
+            <label for="address">Enter zip code or city:</label>
+            <input type="text" name="address" id="address">
+            <input type="button" id="submit" value="Geocode">
+        </fieldset>
+    </form>
+    <div>
+        <h4>Location:</h4>
+        <ul>
+            <!--show results including lat and lng-->
+            <li><span>LAT: </span><span id="lat"></span></li>
+            <li><span>LNG: </span><span id="lng"></span></li>
+        </ul>
+    </div><br>
+    
+</body>
+</html>
