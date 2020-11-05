@@ -17,7 +17,7 @@ You'll need the following:
 * [Down load and Install Apache Tomcat version 9.0](http://tomcat.apache.org/download-90.cgi) Choose the right version under Binary Distributions.
 
 ## How to run 
-## 1. Clone the sample app
+## 1. Clone the app into your ide (eclipse).
 
 Now you're ready to start working with the HikingEveryday Tomcat app. Clone the repository.
 ```
