@@ -18,6 +18,7 @@ You'll need the following:
 
 ## How to run 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## 1. Git: Clone the project in a local directory.
 
 ```
@@ -46,6 +47,9 @@ https://github.com/LilyYin17/Hiking_Everyday.git
 Now you are able to view your app at: http://localhost:8080/HikingEveryday/
 =======
 ## 1. Clone the sample app
+=======
+## 1. Clone the app into your ide (eclipse).
+>>>>>>> Update README.md
 
 Now you're ready to start working with the HikingEveryday Tomcat app. Clone the repository.
 ```
