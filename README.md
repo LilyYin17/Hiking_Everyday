@@ -30,7 +30,7 @@ https://github.com/LilyYin17/Hiking_Everyday.git
 4. Set `Root Directory` to cloned project directory from `Browse...` and check `pox.xml` in `Projects`: section and finally Click `Finish` button 
 
 ## 3. Elcipse, start server:
-1. In the `Servers` window, click the `Servers` window, click `No servers are available. Click the link to create a new server`
+1. In the `Servers` window, click the `Servers` window, click `No servers are available. Click this link to create a new server...`
 2. Choose `Apache`, then choose `Tomcat v9.0 Server` and click `Next`
 3. Click `Browse` and choose the `apache-tomcat-9.0.xxx` that you have downloaded and unzipped (prerequisites), click `Open`
 4. Click `Finish` and then you will find `Tomcat v9.0 Server at localhost ...` in `Servers` window
