@@ -19,6 +19,7 @@ You'll need the following:
 ## How to run 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## 1. Git: Clone the project in a local directory.
 
 ```
@@ -50,18 +51,31 @@ Now you are able to view your app at: http://localhost:8080/HikingEveryday/
 =======
 ## 1. Clone the app into your ide (eclipse).
 >>>>>>> Update README.md
+=======
+## 1. Git: Clone the project in a local directory.
+>>>>>>> Update README.md
 
-Now you're ready to start working with the HikingEveryday Tomcat app. Clone the repository.
 ```
-git clone https://github.com/LilyYin17/Hiking_Everyday.git
+https://github.com/LilyYin17/Hiking_Everyday.git
 ```
 
-## 2. Run the app locally
+## 2. Eclipse:
+1. Click `File` menu
+2. Choose `Import`
+3. Click `Maven` and choose `Existing Maven Project` and click `Next`
+4. Set `Root Directory` to cloned project directory from `Browse...` and check `pox.xml` in `Projects`: section and finally Click `Finish` button 
 
-You must install the dependencies and build a .war file as defined in the pom.xml file to run the app.
+## 3. Elcipse, start Server:
+1. In the `Servers` window, click the `Servers` window, click `No servers are available. Click the link to create a new server`
+2. Choose `Apache`, then choose `Tomcat v9.0 Server` and click `Next`
+3. Click `Browse` and choose the `apache-tomcat-9.0.xxx` that you have downloaded and unzipped (prerequisites), click `Open`
+4. Click `Finish` and then you will find `Tomcat v9.0 Server at localhost ...` in `Servers` window
+5. Update Server configuration. Double Click `Tomcat v9.0 Server at localhost` in Server window. In `Server Locations`, click `Use Tomcat installation ...`. Save this file (Click the window to save + Mac:`Command-S`, Windows: `Ctrl-S`)
+6. Right click `Tomcat v9.0 Server at localhost`, choose `Properties`. Click `Switch Location` to change the location to /Servers/Tomcat v9.0 Server at localhost.server
+7. To start the Tomcat Server, right click on 1Tomcat v9.0 Server at localhost` and click `Start`
 
-Install the dependencies.
 
+<<<<<<< HEAD
 ```
 mvn clean install  
 ```
@@ -75,3 +89,6 @@ Run the app.
 
 View your app at: http://localhost:8080/HikingEveryday/
 >>>>>>> Create README.md
+=======
+Now you are able to view your app at: http://localhost:8080/HikingEveryday/
+>>>>>>> Update README.md
