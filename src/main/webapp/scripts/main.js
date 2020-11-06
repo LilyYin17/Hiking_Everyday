@@ -7,12 +7,10 @@ init();
 
 //entry
 function init(){
-	//select nearby
-//	document.querySelector('#nearby-btn').addEventListener('click', loadNearbyItems);
-	//recommend
-//	document.querySelector('#recommend-btn').addEventListener('click', loadRecommendedItems);
-	
 	validateSession();
+	
+	//add search by zip code feature
+	document.querySelector('#search-btn').addEventListener('click', initMap);
 };
 
 //session validation
@@ -75,3 +73,28 @@ function getLocationFromIP(){
 		loadNearbyItems();
 	});	
 }
+
+//initMap function
+function initMap() {
+    const geocoder = new google.maps.Geocoder();
+    document.getElementById("search-btn").addEventListener("click", () => {
+      geocodeAddress(geocoder);
+    });
+  }
+
+//geocodeAddress function
+function geocodeAddress(geocoder) {
+	var address = document.querySelector('#address').value;
+    geocoder.geocode({ address: address }, (results, status) => {
+      if (status === "OK") {
+        
+        lat = results[0].geometry.location.lat();
+        lon = results[0].geometry.location.lng();
+        console.log('In google maps api');
+        console.log(lat, lng);
+        loadNearbyItems(); //load nearby items
+      } else {
+        alert("Geocode was not successful for the following reason: " + status);
+      }
+    });
+ }

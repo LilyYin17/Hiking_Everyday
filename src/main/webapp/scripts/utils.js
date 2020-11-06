@@ -76,12 +76,19 @@ function addItem(itemList, item){
 	
 	//title
 	var title = $create('a', {
-		className : 'item-name',
+		className : 'item-title',
 		href : item.imgSmallMed,
 		target : '_blank'
 	});
 	title.innerHTML = item.name;
 	section.appendChild(title);
+	
+	// trial name
+	var name = $create('p', {
+		className : 'item-name'
+	});
+	name.innerHTML = item.name;
+	li.appendChild(name);
 	
 	// address
 	var address = $create('p', {

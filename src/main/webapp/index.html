@@ -30,6 +30,12 @@
 			</header>
 			
 			<section class = "main-section">
+				<div id="search-form">
+                	<label for="address">Enter zip code or city:</label>
+                	<input id="address" name="address" type="text">
+                	<button id="search-btn">Search</button>
+                </div>
+                
 				<aside id="item-nav">
 					<div class="nav-ico">
 						<i class="fa fa-sitemap fa-2x"></i>
@@ -68,6 +74,8 @@
 		</footer>
 		
 		<script src="https://rawgit.com/emn178/js-md5/master/build/md5.min.js"></script>
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSvtEPfdFmrBTOZdwkxk_WsQAslJogFxA&callback=initMap&libraries=&v=weekly" defer></script>
 		<script src="scripts/utils.js"></script>
   		<script src="scripts/apis.js"></script>
   		<script src="scripts/main.js"></script>

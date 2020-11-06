@@ -17,9 +17,6 @@ You'll need the following:
 * [Down load and Install Apache Tomcat version 9.0](http://tomcat.apache.org/download-90.cgi) Choose the right version under Binary Distributions.
 
 ## How to run 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ## 1. Git: Clone the project in a local directory.
 
 ```
@@ -27,7 +24,6 @@ https://github.com/LilyYin17/Hiking_Everyday.git
 ```
 
 ## 2. Eclipse: Import the project
-<<<<<<< HEAD
 1. Click `File` menu
 2. Choose `Import`
 3. Click `Maven` and choose `Existing Maven Project` and click `Next`
@@ -47,54 +43,3 @@ https://github.com/LilyYin17/Hiking_Everyday.git
 2. Move Hiking_Everyday from left to right and click `finish`
 
 Now you are able to view your app at: http://localhost:8080/HikingEveryday/
-=======
-## 1. Clone the sample app
-=======
-## 1. Clone the app into your ide (eclipse).
->>>>>>> Update README.md
-=======
-## 1. Git: Clone the project in a local directory.
->>>>>>> Update README.md
-
-```
-https://github.com/LilyYin17/Hiking_Everyday.git
-```
-
-## 2. Eclipse:
-=======
->>>>>>> Update README.md
-1. Click `File` menu
-2. Choose `Import`
-3. Click `Maven` and choose `Existing Maven Project` and click `Next`
-4. Set `Root Directory` to cloned project directory from `Browse...` and check `pox.xml` in `Projects`: section and finally Click `Finish` button 
-
-## 3. Elcipse: Setup Tomecat Servce
-1. In the `Servers` window, click the `Servers` window, click `No servers are available. Click this link to create a new server...`
-2. Choose `Apache`, then choose `Tomcat v9.0 Server` and click `Next`
-3. Click `Browse` and choose the `apache-tomcat-9.0.xxx` that you have downloaded and unzipped (prerequisites), click `Open`
-4. Click `Finish` and then you will find `Tomcat v9.0 Server at localhost ...` in `Servers` window
-5. Update Server configuration. Double Click `Tomcat v9.0 Server at localhost` in Server window. In `Server Locations`, click `Use Tomcat installation ...`. Save this file (Click the window to save + Mac:`Command-S`, Windows: `Ctrl-S`)
-6. Right click `Tomcat v9.0 Server at localhost`, choose `Properties`. Click `Switch Location` to change the location to /Servers/Tomcat v9.0 Server at localhost.server
-7. To start the Tomcat Server, right click on 1Tomcat v9.0 Server at localhost` and click `Start`
-
-## 4. Elcipse: Add the project to Tomcat and run the project under Tomcat
-1. Right click on your `Tomcat v9.0 server at localhost` and choose `Add and Remove`
-2. Move Hiking_Everyday from left to right and click `finish`
-
-<<<<<<< HEAD
-```
-mvn clean install  
-```
-
-Copy GetStartedTomcat.war from the `target` directory into your `tomcat-install-dir` `webapps` directory.
-
-Run the app.  
-```
-<tomcat-install-dir>/bin/startup.bat|.sh
-```
-
-View your app at: http://localhost:8080/HikingEveryday/
->>>>>>> Create README.md
-=======
-Now you are able to view your app at: http://localhost:8080/HikingEveryday/
->>>>>>> Update README.md

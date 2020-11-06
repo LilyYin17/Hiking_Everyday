@@ -43,11 +43,6 @@ ul {
 	width: 40px;
 }
 
-#logout-link {
-	padding-left: 10px;
-	color: white;
-}
-
 /**
  * top navigation
  */
@@ -109,6 +104,35 @@ ul {
 	background: #F3BB43;
 }
 
+/**
+ * search form
+ */
+#search-form {
+	color: #624630;
+	margin: 0px auto;
+	overflow: auto;
+	padding: 40px;
+	width: 350px;
+}
+
+#search-form label {
+	display: block;
+}
+
+#search-form input {
+	border: none;
+	display: block;
+	margin-bottom: 10px;
+	padding: 8px;
+	width: 100%;
+}
+
+#search-form #search-btn {
+	cursor: pointer;
+	float: center;
+	padding: 8px 20px;
+	text-align: center;
+}
 /**
  * aside
  */
@@ -262,7 +286,7 @@ footer ul {
 
 footer ul li {
 	flex: 1;
-}
+} 
 
 
 
