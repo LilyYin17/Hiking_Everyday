@@ -42,4 +42,4 @@ https://github.com/LilyYin17/Hiking_Everyday.git
 1. Right click on your `Tomcat v9.0 server at localhost` and choose `Add and Remove`
 2. Move Hiking_Everyday from left to right and click `finish`
 
-Now you are able to view your app at: http://localhost:8080/HikingEveryday/
+Now you are able to view the app at: http://localhost:8080/HikingEveryday/
