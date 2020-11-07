@@ -17,67 +17,70 @@
             <a href="#">About</a>
         </nav>
         <span id="welcome-msg">Your Profile</span>
-        <i id="avatar" class="avatar fa fa-user fa-2x"></i>
-        </header>
-<div>
-    <!--User questions-->
-    <!--Reference: https://www.w3schools.com/html/html_forms.asp-->
-    <form>
-        <!--Input Name-->
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name" value="Preferred name"><br><br>
-        <!--Input Age-->
-        <label for="age">Age:</label><br>
-        <input type="text" id="age" name="age" value="Actual age"><br><br>
-        <!--Input Gender-->
-        <label>Gender:</label><br>
-        <input type="radio" id="male" name="gender" value="male">
-        <label for="male">Male</label><br>
-        <input type="radio" id="female" name="gender" value="female">
-        <label for="female">Female</label><br>
-        <input type="radio" id="other" name="gender" value="other">
-        <label for="other">Other</label><br>
-        <input type="radio" id="nosay" name="gender" value="nosay">
-        <label for="nosay">Prefer not to say</label><br><br>
-        <!--Input Activity Level-->
-        <label>How many times per week would you exercise? (Each exercise over 20 mins)</label><br>
-        <input type="radio" id="everyday" name="exercise" value="everyday">
-        <label for="everyday">Everyday(Almost)</label><br>
-        <input type="radio" id="someday" name="exercise" value="someday">
-        <label for="someday">2 - 3 days per week</label><br>
-        <input type="radio" id="once" name="exercise" value="once">
-        <label for="once">Once per week</label><br>
-        <input type="radio" id="rarely" name="exercise" value="rarely">
-        <label for="rarely">Rarely or never</label><br><br>
-        <!--Input Joint Problem-->
-        <label>Do you think you have joint problem?</label><br>
-        <input type="radio" id="jointyes" name="joint" value="jointyes">
-        <label for="jointyes">Yes</label><br>
-        <input type="radio" id="jointno" name="joint" value="jointno">
-        <label for="jointno">No</label><br><br>
-        <!--Input Overweight-->
-        <label>Do you think you overweight or obese?</label><br>
-        <input type="radio" id="obeseyes" name="obese" value="obeseyes">
-        <label for="obeseyes">Yes</label><br>
-        <input type="radio" id="jointno" name="obese" value="jointno">
-        <label for="obeseno">No</label><br><br>
-        <!--Input Health Problem-->
-        <label>Do you have following problems? (Please check all that apply)</label><br>
-        <input type="checkbox" id="bloodpressure" name="bloodpressure" value= "-1">
-        <label for="bloodpressure"> High blood pressure</label><br>
-        <input type="checkbox" id="bloodsugar" name="bloodsugar" value="-1">
-        <label for="bloodsugar"> High blood sugar</label><br>
-        <input type="checkbox" id="cholesterol" name="cholesterol" value="-1">
-        <label for="cholesterol"> High cholesterol</label><br>
-        <input type="checkbox" id="diabetes" name="diabetes" value="-1">
-        <label for="diabetes"> Diabetes</label><br>
-        <input type="checkbox" id="none" name="none" value="0">
-        <label for="none"> None of above</label><br><br>
-    </form>
+        <a href="profile.html">
+            <img src="profile.png" width=55 height=55>
+        </a>
+    </header>
+    <div class="container">
+        <!--User questions-->
+        <!--Reference: https://www.w3schools.com/html/html_forms.asp-->
+        <form>
+            <!--Input Name-->
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" value="Preferred name"><br><br>
+            <!--Input Age-->
+            <label for="age">Age:</label><br>
+            <input type="text" id="age" name="age" value="Actual age"><br><br>
+            <!--Input Gender-->
+            <label>Gender:</label><br>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label><br>
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Other</label><br>
+            <input type="radio" id="nosay" name="gender" value="nosay">
+            <label for="nosay">Prefer not to say</label><br><br>
+            <!--Input Activity Level-->
+            <label>How many times per week would you exercise? (Each exercise over 20 mins)</label><br>
+            <input type="radio" id="everyday" name="exercise" value="everyday">
+            <label for="everyday">Everyday(Almost)</label><br>
+            <input type="radio" id="someday" name="exercise" value="someday">
+            <label for="someday">2 - 3 days per week</label><br>
+            <input type="radio" id="once" name="exercise" value="once">
+            <label for="once">Once per week</label><br>
+            <input type="radio" id="rarely" name="exercise" value="rarely">
+            <label for="rarely">Rarely or never</label><br><br>
+            <!--Input Joint Problem-->
+            <label>Do you think you have joint problem?</label><br>
+            <input type="radio" id="jointyes" name="joint" value="jointyes">
+            <label for="jointyes">Yes</label><br>
+            <input type="radio" id="jointno" name="joint" value="jointno">
+            <label for="jointno">No</label><br><br>
+            <!--Input Overweight-->
+            <label>Do you think you overweight or obese?</label><br>
+            <input type="radio" id="obeseyes" name="obese" value="obeseyes">
+            <label for="obeseyes">Yes</label><br>
+            <input type="radio" id="jointno" name="obese" value="jointno">
+            <label for="obeseno">No</label><br><br>
+            <!--Input Health Problem-->
+            <label>Do you have following problems? (Please check all that apply)</label><br>
+            <input type="checkbox" id="bloodpressure" name="bloodpressure" value= "-1">
+            <label for="bloodpressure"> High blood pressure</label><br>
+            <input type="checkbox" id="bloodsugar" name="bloodsugar" value="-1">
+            <label for="bloodsugar"> High blood sugar</label><br>
+            <input type="checkbox" id="cholesterol" name="cholesterol" value="-1">
+            <label for="cholesterol"> High cholesterol</label><br>
+            <input type="checkbox" id="diabetes" name="diabetes" value="-1">
+            <label for="diabetes"> Diabetes</label><br>
+            <input type="checkbox" id="none" name="none" value="0">
+            <label for="none"> None of above</label><br><br>
+        </form>
 
-    <input type="button" value="Calculate">
-</div>
-<p>If you click the "Calculate" button, recommended trail level will appear.</p>
+        <input type="button" value="Calculate">
+        <p>If you click the "Calculate" button, recommended trail level will appear.</p>
+    </div>
+    
 
     <!--scripts-->
     <script src="https://rawgit.com/emn178/js-md5/master/build/md5.min.js"></script>
