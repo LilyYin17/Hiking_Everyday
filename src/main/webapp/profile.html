@@ -17,7 +17,8 @@
             <a href="#">About</a>
         </nav>
         <span id="welcome-msg">Your Profile</span>
-        <a href="profile.html">
+        <!--i id="avatar" class="avatar fa fa-user fa-2x"></i-->
+        <a href="profile_test.html">
             <img src="profile.png" width=55 height=55>
         </a>
     </header>
@@ -43,13 +44,13 @@
             <label for="nosay">Prefer not to say</label><br><br>
             <!--Input Activity Level-->
             <label>How many times per week would you exercise? (Each exercise over 20 mins)</label><br>
-            <input type="radio" id="everyday" name="exercise" value="everyday">
+            <input type="radio" id="everyday" name="exercise" value=3>
             <label for="everyday">Everyday(Almost)</label><br>
-            <input type="radio" id="someday" name="exercise" value="someday">
+            <input type="radio" id="someday" name="exercise" value=2>
             <label for="someday">2 - 3 days per week</label><br>
-            <input type="radio" id="once" name="exercise" value="once">
+            <input type="radio" id="once" name="exercise" value=1>
             <label for="once">Once per week</label><br>
-            <input type="radio" id="rarely" name="exercise" value="rarely">
+            <input type="radio" id="rarely" name="exercise" value=0>
             <label for="rarely">Rarely or never</label><br><br>
             <!--Input Joint Problem-->
             <label>Do you think you have joint problem?</label><br>
@@ -65,7 +66,7 @@
             <label for="obeseno">No</label><br><br>
             <!--Input Health Problem-->
             <label>Do you have following problems? (Please check all that apply)</label><br>
-            <input type="checkbox" id="bloodpressure" name="bloodpressure" value= "-1">
+            <input type="checkbox" id="bloodpressure" name="bloodpressure" value="-1">
             <label for="bloodpressure"> High blood pressure</label><br>
             <input type="checkbox" id="bloodsugar" name="bloodsugar" value="-1">
             <label for="bloodsugar"> High blood sugar</label><br>
@@ -77,12 +78,20 @@
             <label for="none"> None of above</label><br><br>
         </form>
 
-        <input type="button" value="Calculate">
+        <input type="button" value="Calculate" onclick="calculateLevel();">
         <p>If you click the "Calculate" button, recommended trail level will appear.</p>
+        <label><b>Recommended trail level for <span id="displayName">____</span> is: </b></label>
+        <p><span id='display'></span></p>
     </div>
     
 
     <!--scripts-->
+    <script>
+        function calculateLevel() {
+            var name = document.getElementById("name").value;
+            document.getElementById('displayName').innerHTML = name;
+        }
+    </script>
     <script src="https://rawgit.com/emn178/js-md5/master/build/md5.min.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSvtEPfdFmrBTOZdwkxk_WsQAslJogFxA&callback=initMap&libraries=&v=weekly" defer></script>
