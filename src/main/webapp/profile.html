@@ -31,27 +31,25 @@
             <input type="text" id="name" name="name" value="Preferred name"><br><br>
             <!--Input Age-->
             <label for="age">Age:</label><br>
-            <input type="text" id="age" name="age" value="Actual age"><br><br>
+            <input type="number" id="age" name="age"><br><br>
             <!--Input Gender-->
-            <label>Gender:</label><br>
-            <input type="radio" id="male" name="gender" value="male">
-            <label for="male">Male</label><br>
-            <input type="radio" id="female" name="gender" value="female">
-            <label for="female">Female</label><br>
-            <input type="radio" id="other" name="gender" value="other">
-            <label for="other">Other</label><br>
-            <input type="radio" id="nosay" name="gender" value="nosay">
-            <label for="nosay">Prefer not to say</label><br><br>
+            <label for="gender">Gender:</label><br>
+            <select id="gender" name="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+                <option value="nosay">Prefer not to say</option>
+            </select>
+            <br><br>
             <!--Input Activity Level-->
-            <label>How many times per week would you exercise? (Each exercise over 20 mins)</label><br>
-            <input type="radio" id="everyday" name="exercise" value=3>
-            <label for="everyday">Everyday(Almost)</label><br>
-            <input type="radio" id="someday" name="exercise" value=2>
-            <label for="someday">2 - 3 days per week</label><br>
-            <input type="radio" id="once" name="exercise" value=1>
-            <label for="once">Once per week</label><br>
-            <input type="radio" id="rarely" name="exercise" value=0>
-            <label for="rarely">Rarely or never</label><br><br>
+            <label for exercise>How many times per week would you exercise? (Each exercise over 20 mins)</label><br>
+            <select id="exercise" name="exercise">
+                    <option value=3>Everyday(Almost)</option>
+                    <option value=2>2 - 3 days per week</option>
+                    <option value=1>Once per week</option>
+                    <option value=0>Rarely or never</option>
+            </select>
+            <br><br>
             <!--Input Joint Problem-->
             <label>Do you think you have joint problem?</label><br>
             <input type="radio" id="jointyes" name="joint" value="jointyes">
