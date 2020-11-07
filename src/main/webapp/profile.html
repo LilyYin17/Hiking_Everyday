@@ -42,7 +42,7 @@
             </select>
             <br><br>
             <!--Input Activity Level-->
-            <label for exercise>How many times per week would you exercise? (Each exercise over 20 mins)</label><br>
+            <label for="exercise">How many times per week would you exercise? (Each exercise over 20 mins)</label><br>
             <select id="exercise" name="exercise">
                     <option value=3>Everyday(Almost)</option>
                     <option value=2>2 - 3 days per week</option>
@@ -51,17 +51,19 @@
             </select>
             <br><br>
             <!--Input Joint Problem-->
-            <label>Do you think you have joint problem?</label><br>
-            <input type="radio" id="jointyes" name="joint" value="jointyes">
-            <label for="jointyes">Yes</label><br>
-            <input type="radio" id="jointno" name="joint" value="jointno">
-            <label for="jointno">No</label><br><br>
+            <label for="joint">Do you think you have joint problem?</label><br>
+            <select id="joint" name="joint">
+                    <option value=-1>Yes</option>
+                    <option value=0>No</option>
+            </select>
+            <br><br>
             <!--Input Overweight-->
-            <label>Do you think you overweight or obese?</label><br>
-            <input type="radio" id="obeseyes" name="obese" value="obeseyes">
-            <label for="obeseyes">Yes</label><br>
-            <input type="radio" id="jointno" name="obese" value="jointno">
-            <label for="obeseno">No</label><br><br>
+            <label for="obese">Do you think you overweight or obese?</label><br>
+            <select id="obese" name="obese">
+                    <option value=-1>Yes</option>
+                    <option value=0>No</option>
+            </select>
+            <br><br>
             <!--Input Health Problem-->
             <label>Do you have following problems? (Please check all that apply)</label><br>
             <input type="checkbox" id="bloodpressure" name="bloodpressure" value="-1">
