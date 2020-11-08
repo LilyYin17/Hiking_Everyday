@@ -14,7 +14,7 @@ This project is a Java application that uses Apache Tomcat framework. You can ac
 
 You'll need the following:
 * [Download and Install Eclipse IDE for Java EE Developers](https://www.eclipse.org/downloads/)
-* [Down load and Install Apache Tomcat version 9.0](http://tomcat.apache.org/download-90.cgi) Choose the right version under Binary Distributions.
+* [Download and Install Apache Tomcat version 9.0](http://tomcat.apache.org/download-90.cgi) Choose the right version under Binary Distributions.
 
 ## How to run
 ## 1. Git: Clone the project in a local directory.
