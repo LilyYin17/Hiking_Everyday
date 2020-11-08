@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="Hiking Trails Recommendation">
+		<meta name="author" content="Hiking Everyday">
+		<title>Hiking Everyday</title>
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  		<link rel="stylesheet" href="styles/main.css">
+	</head>
+	
+	<body>
+		<header class="top-header">
+			<nav class="top-nav">
+				<a href="#">Home</a>
+				<a href="#">Contact</a>
+				<a href="#">About</a>
+			</nav>
+			<span id="welcome-msg">Your Profile</span>
+	    	<i id="avatar" class="avatar fa fa-user fa-2x"></i>
+	  </header>
+		
+		<div class="container">
+			<header>
+				<p>
+					<span>Trial</span>
+					<br/>Hiking Everyday
+				</p>
+			</header>
+			
+			<section class = "main-section">
+				<div id="search-form">
+                	<label for="address">Enter zip code or city:</label>
+                	<input id="address" name="address" type="text">
+                	<button id="search-btn">Search</button>
+                </div>
+                
+				<aside id="item-nav">
+					<div class="nav-ico">
+						<i class="fa fa-sitemap fa-2x"></i>
+					</div>
+					<nav class="main-nav">
+						<a href="#" id="nearby-btn" class="main-nav-btn active">
+							<i class="fa fa-map-marker"></i> Nearby
+						</a>
+						<a href="#" id="recommend-btn" class="main-nav-btn">
+           	 				<i class="fa fa-thumbs-up"></i> Just For You
+          				</a>
+					</nav>
+				</aside>
+				
+				<ul id="item-list">
+		        <li class="item">
+		          <img alt="item image" src="https://cdn2.apstatic.com/photos/hike/7039883_smallMed_1555092747.jpg"/>
+		          <div>
+		            <a class="item-name" href="#">Trial</a>
+		            <p class="item-category">black</p>
+		            <div class="stars">
+		              <i class="fa fa-star"></i>
+		              <i class="fa fa-star"></i>
+		              <i class="fa fa-star"></i>
+		            </div>
+		          </div>
+		          <p class="item-address">Superior, Colorado</p>
+		        </li>
+		      </ul>
+			</section>
+		</div>
+		
+		<footer>
+			<p class="title">What We Do</p>
+			<p> "Help you find the best trials around."</p>
+		</footer>
+		
+		<script src="https://rawgit.com/emn178/js-md5/master/build/md5.min.js"></script>
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSvtEPfdFmrBTOZdwkxk_WsQAslJogFxA&callback=initMap&libraries=&v=weekly" defer></script>
+		<script src="scripts/utils.js"></script>
+  		<script src="scripts/apis.js"></script>
+  		<script src="scripts/main.js"></script>
+  			
+	</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Hiking Trails Recommendation">
+        <meta name="author" content="Hiking Everyday">
+        <title>Hiking Everyday</title>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="styles/main.css">
+    </head>   
+<body>
+    <header class="top-header">
+        <nav class="top-nav">
+            <a href="#">Home</a>
+            <a href="#">Contact</a>
+            <a href="#">About</a>
+        </nav>
+        <span id="welcome-msg">Your Profile</span>
+        <!--i id="avatar" class="avatar fa fa-user fa-2x"></i-->
+        <a href="profile_test.html">
+            <img src="profile.png" width=55 height=55>
+        </a>
+    </header>
+    <div class="container">
+        <!--User questions-->
+        <!--Reference: https://www.w3schools.com/html/html_forms.asp-->
+        <form>
+            <!--Input Name-->
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" value="Preferred name"><br><br>
+            <!--Input Age-->
+            <label for="age">Age:</label><br>
+            <input type="number" id="age" name="age"><br><br>
+            <!--Input Gender-->
+            <label for="gender">Gender:</label><br>
+            <select id="gender" name="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+                <option value="nosay">Prefer not to say</option>
+            </select>
+            <br><br>
+            <!--Input Activity Level-->
+            <label for="exercise">How many times per week would you exercise? (Each exercise over 20 mins)</label><br>
+            <select id="exercise" name="exercise">
+                    <option value="3">Everyday(Almost)</option>
+                    <option value="2">2 - 3 days per week</option>
+                    <option value="1">Once per week</option>
+                    <option value="0">Rarely or never</option>
+            </select>
+            <br><br>
+            <!--Input Joint Problem-->
+            <label for="joint">Do you think you have joint problem?</label><br>
+            <select id="joint" name="joint">
+                    <option value="-1">Yes</option>
+                    <option value="0">No</option>
+            </select>
+            <br><br>
+            <!--Input Overweight-->
+            <label for="obese">Do you think you overweight or obese?</label><br>
+            <select id="obese" name="obese">
+                    <option value="-1">Yes</option>
+                    <option value="0">No</option>
+            </select>
+            <br><br>
+            <!--Input Health Problem-->
+            <label>Do you have following problems? (Please check all that apply)</label><br>
+            <input type="checkbox" id="bloodpressure" name="bloodpressure" value="-1">
+            <label for="bloodpressure"> High blood pressure</label><br>
+            <input type="checkbox" id="bloodsugar" name="bloodsugar" value="-1">
+            <label for="bloodsugar"> High blood sugar</label><br>
+            <input type="checkbox" id="cholesterol" name="cholesterol" value="-1">
+            <label for="cholesterol"> High cholesterol</label><br>
+            <input type="checkbox" id="diabetes" name="diabetes" value="-1">
+            <label for="diabetes"> Diabetes</label><br>
+            <input type="checkbox" id="none" name="none" value="0">
+            <label for="none"> None of above</label><br><br>
+        </form>
+
+        <input type="button" value="Calculate" onclick="calculateLevel();">
+        <p>If you click the "Calculate" button, recommended trail level will appear.</p>
+        <label><b>Recommended trail level for <span id="displayName">____</span> is: </b></label>
+        <h3><span id='displayLevel'></span></h3>
+    </div>
+    
+
+    <!--scripts-->
+    <script>
+        function calculateLevel() {
+            var name = document.getElementById("name").value;
+            document.getElementById('displayName').innerHTML = name;
+            var actLevel = document.getElementById("exercise").value;
+            var joint = document.getElementById("joint").value;
+            var obese = document.getElementById("obese").value;
+            var sum = actLevel + joint + obese;
+            document.getElementById('displayLevel').innerHTML = sum;
+        }
+    </script>
+    <script src="https://rawgit.com/emn178/js-md5/master/build/md5.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSvtEPfdFmrBTOZdwkxk_WsQAslJogFxA&callback=initMap&libraries=&v=weekly" defer></script>
+    <script src="scripts/utils.js"></script>
+    <script src="scripts/apis.js"></script>
+    <script src="scripts/main.js"></script>
+
+</body>
+</html>
