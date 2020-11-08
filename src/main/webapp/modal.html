@@ -139,6 +139,8 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+
 </style>
 </head>
 
@@ -159,26 +161,27 @@ input:checked + .slider:before {
       <h4>Customize Your Trail</h4>
       <p>OFF ON</p>
       <label class="switch">
-  		<input type="checkbox" checked>
-  		<span class="slider round"></span>
-	  </label>
+  		  <input type="checkbox" checked>
+  		  <span class="slider round"></span>
+	    </label>
     </div>
-    <div class="modal-body">
-      <div class="container">
-  		<p>How do you want to feel? (Optional)</p>
-  		<div class="btn-group">
-    		<button type="button" class="btn btn-primary">Chill</button>
-    		<button type="button" class="btn btn-primary">Challenge</button>
-   		    <button type="button" class="btn btn-primary">Exhausted</button>
-  		</div>
-	  </div>
-    </div>
-    <div class="modal-footer">
-      <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> SAVE</button>
-    </div>
-  </div>
 
+  <div class="modal-body">
+    <div class="container">
+  		<p>How do you want to feel? (Optional)</p>
+  	<div class="btn-group">
+    	<button type="button" class="btn btn-primary">Chill</button>
+    	<button type="button" class="btn btn-primary">Challenge</button>
+   		<button type="button" class="btn btn-primary">Exhausted</button>
+  	</div>
+	</div>
 </div>
+
+<div class="modal-footer">
+  <button type="submit" class="btn btn-success btn-block">
+  <span class="glyphicon glyphicon-off"></span> SAVE</button>
+</div>
+
 
 <script>
 // Get the modal
