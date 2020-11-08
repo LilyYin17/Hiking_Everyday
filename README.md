@@ -3,7 +3,7 @@
 ## What Is It?
 This is the project for OSU CS361 Fall 2020 SOFTWARE ENGINEERING I.
 
-Hiking Everyday is the website which will give the best choice and necessary information about hiking trails to the user specifically based on the their location and physical fitness level. 
+Hiking Everyday is the website which will give the best choice and necessary information about hiking trails to the user specifically based on the their location and physical fitness level.
 
 # About
 
@@ -16,7 +16,7 @@ You'll need the following:
 * [Download and Install Eclipse IDE for Java EE Developers](https://www.eclipse.org/downloads/)
 * [Down load and Install Apache Tomcat version 9.0](http://tomcat.apache.org/download-90.cgi) Choose the right version under Binary Distributions.
 
-## How to run 
+## How to run
 ## 1. Git: Clone the project in a local directory.
 
 ```
@@ -27,7 +27,7 @@ https://github.com/LilyYin17/Hiking_Everyday.git
 1. Click `File` menu
 2. Choose `Import`
 3. Click `Maven` and choose `Existing Maven Project` and click `Next`
-4. Set `Root Directory` to cloned project directory from `Browse...` and check `pox.xml` in `Projects`: section and finally Click `Finish` button 
+4. Set `Root Directory` to cloned project directory from `Browse...` and check `pox.xml` in `Projects`: section and finally Click `Finish` button
 
 ## 3. Elcipse: Setup Tomecat Servce
 1. In the `Servers` window, click the `Servers` window, click `No servers are available. Click this link to create a new server...`
