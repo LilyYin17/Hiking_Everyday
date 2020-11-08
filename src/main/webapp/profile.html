@@ -44,10 +44,10 @@
             <!--Input Activity Level-->
             <label for="exercise">How many times per week would you exercise? (Each exercise over 20 mins)</label><br>
             <select id="exercise" name="exercise">
-                    <option value="3">Everyday(Almost)</option>
-                    <option value="2">2 - 3 days per week</option>
-                    <option value="1">Once per week</option>
-                    <option value="0">Rarely or never</option>
+                    <option value="4">Everyday(Almost)</option>
+                    <option value="3">2 - 3 days per week</option>
+                    <option value="2">Once per week</option>
+                    <option value="1">Rarely or never</option>
             </select>
             <br><br>
             <!--Input Joint Problem-->
@@ -89,12 +89,35 @@
     <script>
         function calculateLevel() {
             var name = document.getElementById("name").value;
+            var age = document.getElementById("age").value;
             document.getElementById('displayName').innerHTML = name;
             var actLevel = document.getElementById("exercise").value;
             var joint = document.getElementById("joint").value;
             var obese = document.getElementById("obese").value;
-            var sum = actLevel + joint + obese;
-            document.getElementById('displayLevel').innerHTML = sum;
+            var sum = parseInt(actLevel,10) + parseInt(joint,10) + parseInt(obese,10);
+            // Check age range
+            if (age <= 14) {
+                sum -= 1;
+            } else if (age >= 60 || age <= 70) {
+                sum -= 1;
+            } else if (age > 70) {
+                sum -= 2;
+            }
+            // Finalize sum and display message
+            var level_1 = "Easy";
+            var level_2 = "Intermediate";
+            var level_3 = "Difficult";
+            var error = "Calculation misfunction";
+            if (sum >= 3) {
+                document.getElementById('displayLevel').innerHTML = level_3;
+            } else if (sum == 2) {
+                document.getElementById('displayLevel').innerHTML = level_2;
+            } else if (sum <= 1) {
+                document.getElementById('displayLevel').innerHTML = level_1;
+            } else {
+                document.getElementById('displayLevel').innerHTML = error;
+            }
+            
         }
     </script>
     <script src="https://rawgit.com/emn178/js-md5/master/build/md5.min.js"></script>
