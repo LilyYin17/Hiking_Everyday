@@ -7,7 +7,7 @@ Hiking Everyday is the website which will give the best choice and necessary inf
 
 # About
 
-This project is a Java application uses Apache Tomcat framework. You can access the webapp by starting tomcat and visiting http://localhost:8080/HikingEveryday/ in your browser.
+This project is a Java application that uses Apache Tomcat framework. You can access the webapp by starting tomcat and visiting http://localhost:8080/HikingEveryday/ in your browser.
 
 # Getting Started
 ## Prerequisites
@@ -29,7 +29,7 @@ https://github.com/LilyYin17/Hiking_Everyday.git
 3. Click `Maven` and choose `Existing Maven Project` and click `Next`
 4. Set `Root Directory` to cloned project directory from `Browse...` and check `pox.xml` in `Projects`: section and finally Click `Finish` button
 
-## 3. Elcipse: Setup Tomecat Servce
+## 3. Eclipse: Setup Tomcat Service
 1. In the `Servers` window, click the `Servers` window, click `No servers are available. Click this link to create a new server...`
 2. Choose `Apache`, then choose `Tomcat v9.0 Server` and click `Next`
 3. Click `Browse` and choose the `apache-tomcat-9.0.xxx` that you have downloaded and unzipped (prerequisites), click `Open`
