@@ -11,9 +11,6 @@
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
 
-/* citation: How TO - CSS/JS Modal, https://www.w3schools.com/howto/howto_css_modals.asp. */
-/*Accessed Nov 2, 2020 */
-
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
@@ -139,8 +136,6 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-
-
 </style>
 </head>
 
@@ -159,29 +154,27 @@ input:checked + .slider:before {
     <div class="modal-header">
       <span class="close">&times;</span>
       <h4>Customize Your Trail</h4>
-      <p>OFF ON</p>
-      <label class="switch">
-  		  <input type="checkbox" checked>
-  		  <span class="slider round"></span>
-	    </label>
+      <input type="checkbox" id="Enable-Filter" name="Enable-Filter" value="YES">
+  <label for="Enable-Filter" class="btn btn-primary"> Click to Enable Filter</label><br>
     </div>
-
-  <div class="modal-body">
+    <div class="collapse">
     <div class="container">
   		<p>How do you want to feel? (Optional)</p>
-  	<div class="btn-group">
-    	<button type="button" class="btn btn-primary">Chill</button>
-    	<button type="button" class="btn btn-primary">Challenge</button>
-   		<button type="button" class="btn btn-primary">Exhausted</button>
-  	</div>
-	</div>
+  	  <div class="btn-group">
+    	  <button type="button" class="btn btn-primary">Chill</button>
+    	  <button type="button" class="btn btn-primary">Challenge</button>
+   		  <button type="button" class="btn btn-primary">Exhausted</button>
+  	  </div>
+	  </div>
 </div>
 
-<div class="modal-footer">
-  <button type="submit" class="btn btn-success btn-block">
-  <span class="glyphicon glyphicon-off"></span> SAVE</button>
-</div>
 
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> SAVE</button>
+    </div>
+  </div>
+
+</div>
 
 <script>
 // Get the modal
@@ -209,6 +202,12 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+$(document).ready(function(){
+  $(".btn-primary").click(function(){
+    $(".collapse").collapse('toggle');
+  });
+
+});
 </script>
 
 </body>
