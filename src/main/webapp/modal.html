@@ -102,9 +102,11 @@ body {font-family: Arial, Helvetica, sans-serif;}
   <div class="modal-content">
     <div class="modal-header">
       <span class="close">&times;</span>
+
+      <!-- Collapse begin here-->
       <h4>Customize Your Trail</h4>
       <input type="checkbox" id="Enable-Filter" name="Enable-Filter" value="YES">
-  <label for="Enable-Filter" class="btn btn-primary"> Click to Enable Filter</label><br>
+      <label for="Enable-Filter" class="btn btn-primary"> Click to Enable Filter</label><br>
     </div>
     <div class="collapse">
     <div class="container">
@@ -151,6 +153,8 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+// function to collapse while clicking on the checkbox
 $(document).ready(function(){
   $(".btn-primary").click(function(){
     $(".collapse").collapse('toggle');
