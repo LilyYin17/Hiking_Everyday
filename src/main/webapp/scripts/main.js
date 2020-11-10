@@ -51,7 +51,7 @@ function onPositionUpdated(position){
 
 //failed to fetch position (user clicked no)
 function onLoadPositionFailed(){
-	console.warm('navigator.geolocation is not avaliable');
+	console.warn('navigator.geolocation is not avaliable');
 	getLocationFromIP(); 
 }
 
@@ -59,7 +59,6 @@ function onLoadPositionFailed(){
 function getLocationFromIP(){
 	var url = 'http://ipinfo.io/json';
 	var data = null;
-		
 	ajax('GET', url, data, function(res){
 		var result = JSON.parse(res);
 		if('loc' in result){
@@ -68,7 +67,7 @@ function getLocationFromIP(){
 			lng = loc[1];
 			loadNearbyItems();
 		} else{
-			console.warm('Getting location by IP failed.');
+			console.warn('Getting location by IP failed.');
 		}
 		loadNearbyItems();
 	});	

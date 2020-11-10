@@ -77,18 +77,20 @@ function addItem(itemList, item){
 	//title
 	var title = $create('a', {
 		className : 'item-title',
-		href : item.imgSmallMed,
+		href : "http://localhost:8080/HikingEveryday/", //need to be changed
 		target : '_blank'
 	});
 	title.innerHTML = item.name;
 	section.appendChild(title);
 	
 	// trial name
-	var name = $create('p', {
-		className : 'item-name'
-	});
-	name.innerHTML = item.name;
-	li.appendChild(name);
+//	var name = $create('p', {
+//		className : 'item-name'
+//	});
+//	name.innerHTML = item.name;
+//	section.appendChild(name);
+	
+	li.appendChild(section);
 	
 	// address
 	var address = $create('p', {
@@ -146,7 +148,7 @@ function ajax(method, url, data, successCallback, errorCallback){
 	
 	//step2: send the request to the server
 	xhr.open(method, url, true); 
-	
+	console.log(method);
 	xhr.onload = function(){
 		if(xhr.status === 200){
 			successCallback(xhr.responseText);
