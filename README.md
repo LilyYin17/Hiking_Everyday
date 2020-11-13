@@ -20,7 +20,7 @@ You'll need the following:
 ## 1. Git: Clone the project in a local directory.
 
 ```
-https://github.com/LilyYin17/Hiking_Everyday.git
+$ git clone https://github.com/LilyYin17/Hiking_Everyday.git
 ```
 
 ## 2. Eclipse: Import the project
@@ -36,7 +36,7 @@ https://github.com/LilyYin17/Hiking_Everyday.git
 4. Click `Finish` and then you will find `Tomcat v9.0 Server at localhost ...` in `Servers` window
 5. Update Server configuration. Double Click `Tomcat v9.0 Server at localhost` in Server window. In `Server Locations`, click `Use Tomcat installation ...`. Save this file (Click the window to save + Mac:`Command-S`, Windows: `Ctrl-S`)
 6. Right click `Tomcat v9.0 Server at localhost`, choose `Properties`. Click `Switch Location` to change the location to /Servers/Tomcat v9.0 Server at localhost.server
-7. To start the Tomcat Server, right click on 1Tomcat v9.0 Server at localhost` and click `Start`
+7. To start the Tomcat Server, right click on `Tomcat v9.0 Server at localhost` and click `Start`
 
 ## 4. Eclipse: Add the project to Tomcat and run the project under Tomcat
 1. Right click on your `Tomcat v9.0 server at localhost` and choose `Add and Remove`
