@@ -3,31 +3,29 @@
 var lat = 40.0274;
 var lon = -105.2519;
 
+// var trailId;
 init();
 
 //entry
 function init(){
-	validateSession();
-	
 	//add search by zip code feature
 	document.querySelector('#search-btn').addEventListener('click', initMap);
+	document.querySelector('#profile-btn').addEventListener('click', showProfileForm);
+	document.querySelector('#home-btn').addEventListener('click', showHomePage);
 };
 
-//session validation
-function validateSession(){
-	var itemNav = document.querySelector('#item-nav');
-	var itemList = document.querySelector('#item-list');
-	var avatar = document.querySelector('#avatar');
-	var welcomeMsg = document.querySelector('#welcome-msg');
-	
-	welcomeMsg.innerHTML = 'welcome to HikingEveryday! ';
+//initMap function
+function initMap() {
+	var profileForm = document.querySelector('#profile-form');
+	hideElement(profileForm);
+    const geocoder = new google.maps.Geocoder();
+    document.getElementById("search-btn").addEventListener("click", () => {
+      geocodeAddress(geocoder);
+    });
 	
 	//display loading message
-	showLoadingMessage('Validating session...');
-	
-	//fetch current location
-	iniGeolocation();
-}
+    showErrorMessage('No nearby trials. Please enter zipcode or city name.');
+  }
 
 
 //fetch location 
