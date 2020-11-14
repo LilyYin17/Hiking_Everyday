@@ -34,18 +34,6 @@
 			</header>
 			
 			<section class = "main-section">
-<<<<<<< HEAD
-			
- 				<div id="profile-form">
-					<form>
-            			Input Name
-            			<label for="name">Name:</label><br>
-            			<input type="text" id="name" name="name" value="Preferred name"><br><br>
-            			Input Age
-            			<label for="age">Age:</label><br>
-            			<input type="number" id="age" name="age"><br><br>
-            			Input Gender
-=======
 
  				<div id="profile-form">
 					<form>
@@ -56,7 +44,6 @@
             			<label for="age">Age:</label><br>
             			<input type="number" id="age" name="age"><br><br>
             			Input Gender<br>
->>>>>>> merge multiple html files, add js and backend api
             			<label for="gender">Gender:</label><br>
             			<select id="gender" name="gender">
                 			<option value="male">Male</option>
@@ -65,11 +52,7 @@
                 			<option value="nosay">Prefer not to say</option>
             			</select>
             			<br><br>
-<<<<<<< HEAD
-            			Input Activity Level
-=======
             			Input Activity Level<br>
->>>>>>> merge multiple html files, add js and backend api
             			<label for="exercise">How many times per week would you exercise? (Each exercise over 20 mins)</label><br>
             			<select id="exercise" name="exercise">
                     		<option value="4">Everyday(Almost)</option>
@@ -78,33 +61,21 @@
                     		<option value="1">Rarely or never</option>
             			</select>
             			<br><br>
-<<<<<<< HEAD
-            			Input Joint Problem
-=======
             			Input Joint Problem<br>
->>>>>>> merge multiple html files, add js and backend api
             			<label for="joint">Do you think you have joint problem?</label><br>
             			<select id="joint" name="joint">
                     		<option value="-1">Yes</option>
                     		<option value="0">No</option>
             			</select>
             			<br><br>
-<<<<<<< HEAD
-            			Input Overweight
-=======
             			Input Overweight<br>
->>>>>>> merge multiple html files, add js and backend api
             			<label for="obese">Do you think you overweight or obese?</label><br>
             			<select id="obese" name="obese">
                     		<option value="-1">Yes</option>
                     		<option value="0">No</option>
             			</select>
             			<br><br>
-<<<<<<< HEAD
-            			Input Health Problem
-=======
             			Input Health Problem<br>
->>>>>>> merge multiple html files, add js and backend api
             			<label>Do you have following problems? (Please check all that apply)</label><br>
             			<input type="checkbox" id="bloodpressure" name="bloodpressure" value="-1">
             			<label for="bloodpressure"> High blood pressure</label><br>
@@ -125,45 +96,7 @@
         			<br>
         			<label><b>Recommended trail level is: </b></label>
         			<h3><mark><span id='displayLevel'></span></mark></h3>
-<<<<<<< HEAD
-        			
-        			<!--scripts-->
-   	 				<script>
-	        			function calculateLevel() {
-	            			var name = document.getElementById("name").value;
-				            var age = document.getElementById("age").value;
-				            document.getElementById('displayName').innerHTML = name;
-				            var actLevel = document.getElementById("exercise").value;
-				            var joint = document.getElementById("joint").value;
-				            var obese = document.getElementById("obese").value;
-				            var sum = parseInt(actLevel,10) + parseInt(joint,10) + parseInt(obese,10);
-				            // Check age range
-				            if (age <= 14) {
-				                sum -= 1;
-				            } else if (age >= 60 || age <= 70) {
-				                sum -= 1;
-				            } else if (age > 70) {
-				                sum -= 2;
-				            }
-				            // Finalize sum and display message
-				            var level_1 = "Easy";
-				            var level_2 = "Intermediate";
-				            var level_3 = "Difficult";
-				            var error = "Calculation misfunction";
-				            if (sum >= 3) {
-				                document.getElementById('displayLevel').innerHTML = level_3;
-				            } else if (sum == 2) {
-				                document.getElementById('displayLevel').innerHTML = level_2;
-				            } else if (sum <= 1) {
-				                document.getElementById('displayLevel').innerHTML = level_1;
-				            } else {
-				                document.getElementById('displayLevel').innerHTML = error;
-				            }
-				       	}
-    				</script>
-=======
         			<p id="register-result"></p>
->>>>>>> merge multiple html files, add js and backend api
 	        	</div>
 				
 				<div id="search-form">

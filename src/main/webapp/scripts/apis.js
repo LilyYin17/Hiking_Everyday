@@ -32,18 +32,9 @@ function loadNearbyItems(){
 	); //end of ajax function
 }
 
-<<<<<<< HEAD
-
-/**
- * API #2 Load the trial info API end point: [GET]
- *
- * @param item - The item user choose to check
- *
-=======
 /**
  * API #2 Load the trial info API end point: [GET]
  * @param item - The item user choose to check
->>>>>>> merge multiple html files, add js and backend api
  * API end point: [GET]
  * /trialInfo?id=xxxx
  */
@@ -52,11 +43,6 @@ function loadTrailInfo(item){
 	console.log(li);
 	var trailId = li.dataset.item_id;
 	console.log(trailId);
-<<<<<<< HEAD
-
-=======
-	
->>>>>>> merge multiple html files, add js and backend api
 	var url = './trailInfo';
 	var params = 'id=' + trailId;
 	var data = null;
@@ -80,8 +66,6 @@ function loadTrailInfo(item){
 		}
 	);
 }
-<<<<<<< HEAD
-=======
 
 /**
  * API #3 Load justForYou items API end point: [GET]
@@ -251,4 +235,3 @@ function setNearbys(user_Id, item_id){
 		}
 	);
 }
->>>>>>> merge multiple html files, add js and backend api

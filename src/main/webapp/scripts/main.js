@@ -1,14 +1,8 @@
 // for now, default location info
 
 var lat = 40.0274;
-<<<<<<< HEAD
-var lon = -105.2519;
-
-// var trailId;
-=======
 var lng = -105.2519;
 var user_Id = 'empty';
->>>>>>> merge multiple html files, add js and backend api
 init();
 
 // entry
@@ -17,17 +11,11 @@ function init(){
 	document.querySelector('#search-btn').addEventListener('click', initMap);
 	document.querySelector('#profile-btn').addEventListener('click', showProfileForm);
 	document.querySelector('#home-btn').addEventListener('click', showHomePage);
-<<<<<<< HEAD
-};
-
-// initMap function
-=======
 	document.querySelector('#nearby-btn').addEventListener('click', showHomePage);
 	document.querySelector('#recommend-btn').addEventListener('click', showJustForYou);
 };
 
 //initMap function
->>>>>>> merge multiple html files, add js and backend api
 function initMap() {
 	var profileForm = document.querySelector('#profile-form');
 	hideElement(profileForm);
@@ -36,11 +24,7 @@ function initMap() {
       geocodeAddress(geocoder);
     });
 	
-<<<<<<< HEAD
-	// display loading message
-=======
 	//display loading message
->>>>>>> merge multiple html files, add js and backend api
     showErrorMessage('No nearby trials. Please enter zipcode or city name.');
   }
 
@@ -62,14 +46,8 @@ function geocodeAddress(geocoder) {
     });
  }
 
-<<<<<<< HEAD
-// function to list user profile form
-function showProfileForm(){
-	console.log("in show profile form function");
-=======
 //function to list user profile form
 function showProfileForm(){
->>>>>>> merge multiple html files, add js and backend api
 	var searchForm = document.querySelector('#search-form');
     var itemNav = document.querySelector('#item-nav');
     var itemList = document.querySelector('#item-list');
@@ -82,19 +60,12 @@ function showProfileForm(){
     hideElement(itemList);
     hideElement(avatar);
     hideElement(welcomeMsg);
-<<<<<<< HEAD
-    showElement(profileForm);
-}
-
-// function to go back to homepage 
-=======
     
     clearRegisterResult();
     showElement(profileForm);
 }
 
 //function to go back to home page 
->>>>>>> merge multiple html files, add js and backend api
 function showHomePage(){
 	var searchForm = document.querySelector('#search-form');
     var itemNav = document.querySelector('#item-nav');
@@ -112,13 +83,6 @@ function showHomePage(){
     loadNearbyItems();
 }
 
-<<<<<<< HEAD
-
-// function to show the trailInfo page
-function showTrailInfo(){
-	loadTrailInfo();
-}
-=======
 //function to show the trailInfo page
 function showTrailInfo(){
 	loadTrailInfo();
@@ -167,4 +131,3 @@ function calculateLevel() {
     }
     register(fitnessLevel);
 }
->>>>>>> merge multiple html files, add js and backend api
