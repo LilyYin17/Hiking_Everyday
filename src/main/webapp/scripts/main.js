@@ -12,7 +12,8 @@ function init() {
 	document.querySelector('#profile-btn').addEventListener('click', showProfileForm);
 	document.querySelector('#home-btn').addEventListener('click', showHomePage);
 	document.querySelector('#nearby-btn').addEventListener('click', showHomePage);
-	document.querySelector('#recommend-btn').addEventListener('click', showJustForYou);
+  document.querySelector('#recommend-btn').addEventListener('click', showJustForYou);
+  document.querySelector('.close').addEventListener('click', hideModal);
 };
 
 //initMap function
@@ -90,7 +91,8 @@ function showTrailInfo() {
 
 //function to show just for you page
 function showJustForYou() {
-	console.log('In howJustForYou()');
+  console.log('In howJustForYou()');
+  showModal();
 	loadJustForYouItems(user_Id);
 	console.log('Done howJustForYou()');
 }

@@ -10,10 +10,11 @@
 		<meta name="author" content="Hiking Everyday">
 		<title>Hiking Everyday</title>
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   		<link rel="stylesheet" href="styles/main.css">
 	</head>
-	
+
 	<body>
 		<header class="top-header">
 			<nav class="top-nav">
@@ -23,8 +24,8 @@
 			<button id="profile-btn">Profile</button>
 			<i id="avatar" class="avatar fa fa-user fa-2x"></i>
 	  </header>
-	  
-		
+
+
 		<div class="container">
 			<header>
 				<p>
@@ -32,7 +33,7 @@
 					<br/>Hiking Everyday
 				</p>
 			</header>
-			
+
 			<section class = "main-section">
 
  				<div id="profile-form">
@@ -98,13 +99,13 @@
         			<h3><mark><span id='displayLevel'></span></mark></h3>
         			<p id="register-result"></p>
 	        	</div>
-				
+
 				<div id="search-form">
                 	<label for="address">Enter ZIP code or city:</label>
                 	<input id="address" name="address" type="text" title="5-digit ZIP code or city name" placeholder="5-digit ZIP code or city name">
                 	<button id="search-btn">Search</button>
                 </div>
-                
+
 				<aside id="item-nav">
 					<div class="nav-ico">
 						<i class="fa fa-sitemap fa-2x"></i>
@@ -118,37 +119,65 @@
           				</a>
 					</nav>
 				</aside>
-				
+
 				<ul id="item-list">
-		        <li class="item">
-		          <img alt="item image" src="https://cdn2.apstatic.com/photos/hike/7039883_smallMed_1555092747.jpg"/>
-		          <div>
-		            <a class="item-name" href="#">Trial</a>
-		            <p class="item-category">black</p>
-		            <div class="stars">
-		              <i class="fa fa-star"></i>
-		              <i class="fa fa-star"></i>
-		              <i class="fa fa-star"></i>
-		            </div>
-		          </div>
-		          <p class="item-address">Superior, Colorado</p>
-		        </li>
-		      </ul>
+					<li class="item">
+					<img alt="item image" src="https://cdn2.apstatic.com/photos/hike/7039883_smallMed_1555092747.jpg"/>
+					<div>
+						<a class="item-name" href="#">Trial</a>
+						<p class="item-category">black</p>
+						<div class="stars">
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						</div>
+					</div>
+					<p class="item-address">Superior, Colorado</p>
+					</li>
+			  	</ul>
+
+				<div id="myModal" class="modal">
+					<div class="modal-content">
+						<div class="modal-header">
+							<span class="close">&times;</span>
+							<!-- Collapse begin here-->
+							<h4>Customize Your Trail</h4>
+							<input type="checkbox" id="Enable-Filter" name="Enable-Filter" value="YES">
+							<label for="Enable-Filter" class="btn btn-primary filterToggle"> Click to Enable Filter</label><br>
+						</div>
+
+						<div class="collapse">
+							<div class="container">
+								<p>How do you want to feel? (Optional)</p>
+								<div class="btn-group">
+									<button type="button" class="btn btn-primary">Chill</button>
+									<button type="button" class="btn btn-primary">Challenge</button>
+									<button type="button" class="btn btn-primary">Exhausted</button>
+								</div>
+							</div>
+						</div>
+
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> SAVE</button>
+						</div>
+					</div>
+				</div>
 			</section>
-			
 		</div>
-		
+
 		<footer>
 			<p class="title">What We Do</p>
 			<p> "Help you find the best trails around."</p>
 		</footer>
-		
+
 		<script src="https://rawgit.com/emn178/js-md5/master/build/md5.min.js"></script>
 		<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSvtEPfdFmrBTOZdwkxk_WsQAslJogFxA&callback=initMap&libraries=&v=weekly" defer></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSvtEPfdFmrBTOZdwkxk_WsQAslJogFxA&callback=initMap&libraries=&v=weekly" defer></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 		<script src="scripts/utils.js"></script>
   		<script src="scripts/apis.js"></script>
   		<script src="scripts/main.js"></script>
-  			
+
 	</body>
 </html>
