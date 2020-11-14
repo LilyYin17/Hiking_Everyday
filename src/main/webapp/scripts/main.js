@@ -23,7 +23,7 @@ function initMap() {
     document.getElementById("search-btn").addEventListener("click", () => {
       geocodeAddress(geocoder);
     });
-	
+
 	//display loading message
     showErrorMessage('No nearby trials. Please enter zipcode or city name.');
   }
@@ -34,7 +34,7 @@ function geocodeAddress(geocoder) {
 	var address = document.querySelector('#address').value;
     geocoder.geocode({ address: address }, (results, status) => {
       if (status === "OK") {
-        
+
         lat = results[0].geometry.location.lat();
         lng = results[0].geometry.location.lng();
         console.log('In google maps api');
@@ -54,18 +54,18 @@ function showProfileForm(){
     var avatar = document.querySelector('#avatar');
     var welcomeMsg = document.querySelector('#welcome-msg');
     var profileForm = document.querySelector('#profile-form');
-    
+
     hideElement(searchForm);
     hideElement(itemNav);
     hideElement(itemList);
     hideElement(avatar);
     hideElement(welcomeMsg);
-    
+
     clearRegisterResult();
     showElement(profileForm);
 }
 
-//function to go back to home page 
+//function to go back to home page
 function showHomePage(){
 	var searchForm = document.querySelector('#search-form');
     var itemNav = document.querySelector('#item-nav');
@@ -73,7 +73,7 @@ function showHomePage(){
     var avatar = document.querySelector('#avatar');
     var welcomeMsg = document.querySelector('#welcome-msg');
     var profileForm = document.querySelector('#profile-form');
-    
+
     showElement(searchForm);
     showElement(itemNav);
     showElement(itemList);
