@@ -31,3 +31,42 @@ function loadNearbyItems(){
 	}
 	); //end of ajax function
 }
+
+
+/**
+ * API #2 Load the trial info API end point: [GET]
+ *
+ * @param item - The item user choose to check
+ *
+ * API end point: [GET]
+ * /trialInfo?id=xxxx
+ */
+function loadTrailInfo(item){
+	var li = document.querySelector('#item-' + item.id);
+	console.log(li);
+	var trailId = li.dataset.item_id;
+	console.log(trailId);
+
+	var url = './trailInfo';
+	var params = 'id=' + trailId;
+	var data = null;
+	//display loading message
+	showLoadingMessage('Loading trial information...');
+	//make AJAX call
+	ajax('GET', url + '?' + params, data,
+		//successful callback
+		function(res){
+			var trail = JSON.parse(res);
+			if(!trail || trail.length === 0){
+				showWarningMessage('No trail details found.');
+			} else{
+				console.log(trail);
+				listDetails(trail);
+			}
+		},
+		//failed callback
+		function(){
+			showErrorMessage('Cannot load trail information');
+		}
+	);
+}
