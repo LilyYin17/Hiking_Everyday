@@ -47,7 +47,7 @@ function loadTrailInfo(item){
 	var params = 'id=' + trailId;
 	var data = null;
 	//display loading message
-	showLoadingMessage('Loading trial information...');
+	showLoadingMessage('Loading trail information...');
 	//make AJAX call
 	ajax('GET', url + '?' + params, data,
 		//successful callback
@@ -176,6 +176,8 @@ function changeFilter(userFilter){
  * /filter?userId=xxxx
  */
 function loadJustForYouItems(userId){
+	console.log('loadJustForYouItems');
+	activeBtn('recommend-btn');
 	if(userId == null || userId == 'empty'){
 	    showErrorMessage('Please fill the form by clicking Profile to get the best trails for you.');
 	    return

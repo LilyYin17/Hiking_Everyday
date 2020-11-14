@@ -6,7 +6,7 @@ var user_Id = 'empty';
 init();
 
 // entry
-function init(){
+function init() {
 	//add search by zip code feature
 	document.querySelector('#search-btn').addEventListener('click', initMap);
 	document.querySelector('#profile-btn').addEventListener('click', showProfileForm);
@@ -84,13 +84,15 @@ function showHomePage(){
 }
 
 //function to show the trailInfo page
-function showTrailInfo(){
+function showTrailInfo() {
 	loadTrailInfo();
 }
 
 //function to show just for you page
-function showJustForYou(){
-	loadJustForYouItems();
+function showJustForYou() {
+	console.log('In howJustForYou()');
+	loadJustForYouItems(user_Id);
+	console.log('Done howJustForYou()');
 }
 
 //function to calculate the user's fitness level
