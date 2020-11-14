@@ -11,7 +11,8 @@ function init(){
 	//add search by zip code feature
 	document.querySelector('#search-btn').addEventListener('click', initMap);
 	document.querySelector('#profile-btn').addEventListener('click', showProfileForm);
-	document.querySelector('#home-btn').addEventListener('click', showHomePage);
+  document.querySelector('#home-btn').addEventListener('click', showHomePage);
+  document.querySelector('#recommend-btn').addEventListener('click', showPopupModal);
 };
 
 // initMap function
@@ -22,7 +23,7 @@ function initMap() {
     document.getElementById("search-btn").addEventListener("click", () => {
       geocodeAddress(geocoder);
     });
-	
+
 	// display loading message
     showErrorMessage('No nearby trials. Please enter zipcode or city name.');
   }
@@ -33,7 +34,7 @@ function geocodeAddress(geocoder) {
 	var address = document.querySelector('#address').value;
     geocoder.geocode({ address: address }, (results, status) => {
       if (status === "OK") {
-        
+
         lat = results[0].geometry.location.lat();
         lng = results[0].geometry.location.lng();
         console.log('In google maps api');
@@ -54,7 +55,7 @@ function showProfileForm(){
     var avatar = document.querySelector('#avatar');
     var welcomeMsg = document.querySelector('#welcome-msg');
     var profileForm = document.querySelector('#profile-form');
-    
+
     hideElement(searchForm);
     hideElement(itemNav);
     hideElement(itemList);
@@ -63,7 +64,7 @@ function showProfileForm(){
     showElement(profileForm);
 }
 
-// function to go back to homepage 
+// function to go back to homepage
 function showHomePage(){
 	var searchForm = document.querySelector('#search-form');
     var itemNav = document.querySelector('#item-nav');
@@ -71,7 +72,7 @@ function showHomePage(){
     var avatar = document.querySelector('#avatar');
     var welcomeMsg = document.querySelector('#welcome-msg');
     var profileForm = document.querySelector('#profile-form');
-    
+
     showElement(searchForm);
     showElement(itemNav);
     showElement(itemList);
@@ -85,4 +86,9 @@ function showHomePage(){
 // function to show the trailInfo page
 function showTrailInfo(){
 	loadTrailInfo();
+}
+
+// function to show just for you pop up modal
+function showPopupModal() {
+  console.log("I was clicked!");
 }
