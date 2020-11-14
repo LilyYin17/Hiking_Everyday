@@ -10,8 +10,52 @@
   	<description></description>
   	<servlet-class>rpc.SearchItem</servlet-class>
   </servlet>
+  
+  <servlet>
+  	<servlet-name>TrailInfo</servlet-name>
+  	<display-name>TrailInfo</display-name>
+  	<description></description>
+  	<servlet-class>rpc.TrailInfo</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Register</servlet-name>
+  	<display-name>Register</display-name>
+  	<description></description>
+  	<servlet-class>rpc.Register</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Filter</servlet-name>
+  	<display-name>Filter</display-name>
+  	<description></description>
+  	<servlet-class>rpc.Filter</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Nearbys</servlet-name>
+  	<display-name>Nearbys</display-name>
+  	<description></description>
+  	<servlet-class>rpc.Nearbys</servlet-class>
+  </servlet>
+  
   <servlet-mapping>
   	<servlet-name>SearchItem</servlet-name>
   	<url-pattern>/search</url-pattern>
   </servlet-mapping>
+ 
+  <servlet-mapping>
+  	<servlet-name>TrailInfo</servlet-name>
+  	<url-pattern>/trailInfo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Register</servlet-name>
+  	<url-pattern>/register</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Filter</servlet-name>
+  	<url-pattern>/filter</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Nearbys</servlet-name>
+  	<url-pattern>/nearby</url-pattern>
+  </servlet-mapping>
+
 </web-app>

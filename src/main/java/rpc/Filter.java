@@ -1,27 +1,29 @@
 package rpc;
 
 import java.io.IOException;
+import java.util.*;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 import db.MySQLConnection;
 import entity.TrailItem;
-import external.HikingProjectClient;
-import java.util.*;
 
 /**
- * Servlet implementation class SearchItem
+ * Servlet implementation class Filter
  */
-public class SearchItem extends HttpServlet {
+public class Filter extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SearchItem() {
+    public Filter() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,21 +32,16 @@ public class SearchItem extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		double lat = Double.parseDouble(request.getParameter("lat"));
-		double lon = Double.parseDouble(request.getParameter("lon"));
-		
-		HikingProjectClient client = new HikingProjectClient();
-		List<TrailItem> items = client.search(lat, lon);
-		
-		MySQLConnection connection = new MySQLConnection();
+		String userId = request.getParameter("userId");
+		MySQLConnection conn = new MySQLConnection();
+		List<TrailItem> trailList = conn.getTrailList(userId);
+		conn.close();
 		
 		JSONArray array = new JSONArray();
-		for(TrailItem item : items) {
-			array.put(item.toJSONObject());
-			connection.saveItem(item);
+		for(TrailItem trail : trailList) {
+			array.put(trail.toJSONObject());
 		}
-		connection.close();
+		conn.close();
 		RpcHelper.writeJsonArray(response, array);
 	}
 
@@ -52,8 +49,14 @@ public class SearchItem extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		JSONObject input = RpcHelper.readJSONObject(request);
+		String userId = input.getString("userId");
+		String filter = input.getString("filter");
+		
+		MySQLConnection conn = new MySQLConnection();
+		conn.setUserFilter(userId, filter);
+		conn.close();
+		RpcHelper.writeJsonObject(response, new JSONObject().put("result", "SUCCESS"));
 	}
 
 }

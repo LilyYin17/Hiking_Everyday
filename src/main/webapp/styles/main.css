@@ -43,6 +43,11 @@ ul {
 	width: 40px;
 }
 
+#profile-link {
+	padding-left: 10px;
+	color: white;
+}
+
 /**
  * top navigation
  */
@@ -245,18 +250,6 @@ ul {
 	align-items: center;
 	display: flex;
 	padding-top: 10px;
-}
-
-.fav-link {
-	border-left: 1px solid #FFFFFF;
-	cursor: pointer;
-	line-height: 60px;
-	text-align: center;
-	width: 60px;
-}
-
-.fav-link:hover {
-	color: #F13F3F;
 }
 
 /**

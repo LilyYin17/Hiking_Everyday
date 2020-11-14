@@ -5,6 +5,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class TrailItem {
+	//Fields are the useful information we need from the response
 	private int trailId;
 	private String trailName;
 	private double trailLength;
@@ -27,11 +28,11 @@ public class TrailItem {
 		this.difficulty = builder.difficulty;
 	}
 	
-	public int getTrialId() {
+	public int getTrailId() {
 		return trailId;
 	}
 	
-	public String getTrialName() {
+	public String getTrailName() {
 		return trailName;
 	}
 	

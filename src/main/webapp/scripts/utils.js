@@ -24,6 +24,13 @@ function showErrorMessage(msg) {
 	itemList.innerHTML = '<p class="notice"><i class="fa fa-exclamation-circle"></i> ' + msg + '</p>';
 }
 
+function showRegisterResult(registerMessage) {
+    document.querySelector('#register-result').innerHTML = registerMessage;
+}
+
+function clearRegisterResult() {
+    document.querySelector('#register-result').innerHTML = '';
+}
 /**
  * List nearby items based on the data received
  * @params items - An array of item JSON objects
@@ -41,14 +48,14 @@ function listItems(items) {
  * List trial detail information based on the data received
  * @params detail - An array of detail JSON objects
  */
-function listDetails(trail) {
-	var itemList = document.querySelector('#item-list');
-	itemList.innerHTML = ''; // clear current results
-	addDetails(itemList, trail);
+function listDetails(trail){
+    var itemList = document.querySelector('#item-list');
+    itemList.innerHTML = ''; // clear current results
+    addDetails(itemList, trail);
 }
 
 //PLEASE CHANGE HERE!!!!
-function addDetails(itemList, trail) {
+function addDetails(itemList, trail){
 	//create the <li> tag and specify the id and class attributes
 	var li = $create('li', {
 		id: trail.id,
@@ -58,23 +65,23 @@ function addDetails(itemList, trail) {
 	li.dataset.trail_id = trail.id;
 
 	//trail image
-	if (trail.imgSmallMed) {
+	if(trail.imgSmallMed){
 		li.appendChild($create('img', {
-			src: trail.imgSmallMed
+			src : trail.imgSmallMed
 		}));
-	} else {
+	} else{
 		li.appendChild($create('img', {
-			src: 'https://via.placeholder.com/100'
+			src : 'https://via.placeholder.com/100'
 		}));
-	}
-
+	}	
+	
 	//trail name
 	var trailName = $create('a', {
 		className: 'trail-name',
 	});
 	trailName.innerHTML = trail.name;
 	li.appendChild(trailName);
-
+	
 	//section
 	var section = $create('div');
 	//trail length
@@ -83,17 +90,17 @@ function addDetails(itemList, trail) {
 	});
 	trailLength.innerHTML = trail.length;
 	li.appendChild(trailLength);
-
+	
 	//section
 	var section = $create('div');
-
+	
 	// address
 	var address = $create('p', {
-		className: 'trail-address'
+		className : 'trail-address'
 	});
 	address.innerHTML = trail.location;
 	li.appendChild(address);
-
+	
 	itemList.appendChild(li);
 }
 
@@ -108,9 +115,10 @@ function addDetails(itemList, trail) {
  * </div>
  * <p class="item-address">Superior, Colorado</p>
  */
-function addItem(itemList, item) {
+function addItem(itemList, item){
+	setNearbys(user_Id, item.id); //add row to nearbys db
 	var item_id = 'item-' + item.id;
-
+	
 	//create the <li> tag and specify the id and class attributes
 	var li = $create('li', {
 		id: item_id,
@@ -120,7 +128,6 @@ function addItem(itemList, item) {
 
 	//set the data attributes <li data-item_id="xxxxx">
 	li.dataset.item_id = item.id;
-
 	//item image
 	if (item.imgSmallMed) {
 		li.appendChild($create('img', {
@@ -130,22 +137,22 @@ function addItem(itemList, item) {
 		li.appendChild($create('img', {
 			src: 'https://via.placeholder.com/100'
 		}));
-	}
-
+	}	
+	
 	//section
 	var section = $create('div');
 
 	//title
 	var title = $create('a', {
 		className: 'item-link',
-		href: '#',
+		href : '#',
 	});
 	title.innerHTML = item.name;
-	title.onclick = function () {
+	title.onclick = function(){
 		loadTrailInfo(item);
 	}
 	section.appendChild(title)
-
+	
 	// trial name
 	//	var name = $create('p', {
 	//		className : 'item-name'
