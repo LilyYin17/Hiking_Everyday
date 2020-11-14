@@ -6,22 +6,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.json.JSONArray;
+import org.json.JSONObject;
 
 import db.MySQLConnection;
-import entity.TrailItem;
-import external.HikingProjectClient;
-import java.util.*;
 
 /**
- * Servlet implementation class SearchItem
+ * Servlet implementation class Nearbys
  */
-public class SearchItem extends HttpServlet {
+public class Nearbys extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SearchItem() {
+    public Nearbys() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,30 +28,29 @@ public class SearchItem extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		double lat = Double.parseDouble(request.getParameter("lat"));
-		double lon = Double.parseDouble(request.getParameter("lon"));
 		
-		HikingProjectClient client = new HikingProjectClient();
-		List<TrailItem> items = client.search(lat, lon);
-		
-		MySQLConnection connection = new MySQLConnection();
-		
-		JSONArray array = new JSONArray();
-		for(TrailItem item : items) {
-			array.put(item.toJSONObject());
-			connection.saveItem(item);
-		}
-		connection.close();
-		RpcHelper.writeJsonArray(response, array);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		//parse request body, get item and user information
+		//call setNearbyItem
+		//return OK
+		MySQLConnection conn = new MySQLConnection();
+		JSONObject input = RpcHelper.readJSONObject(request);
+		String userId = input.getString("userId");
+		int trailId = input.getInt("trailId");
+		
+		JSONObject obj = new JSONObject();
+		if (conn.addNearby(userId, trailId)) {
+			obj.put("status", "OK");
+		} else {
+			obj.put("status", "Nearby Already Exists");
+		}
+		conn.close();
+		RpcHelper.writeJsonObject(response, obj);		
 	}
 
 }

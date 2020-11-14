@@ -24,6 +24,13 @@ function showErrorMessage(msg) {
 	itemList.innerHTML = '<p class="notice"><i class="fa fa-exclamation-circle"></i> ' + msg + '</p>';
 }
 
+function showRegisterResult(registerMessage) {
+    document.querySelector('#register-result').innerHTML = registerMessage;
+}
+
+function clearRegisterResult() {
+    document.querySelector('#register-result').innerHTML = '';
+}
 /**
  * List nearby items based on the data received
  * @params items - An array of item JSON objects
@@ -41,6 +48,7 @@ function listItems(items) {
  * List trial detail information based on the data received
  * @params detail - An array of detail JSON objects
  */
+<<<<<<< HEAD
 function listDetails(trail) {
 	var itemList = document.querySelector('#item-list');
 	itemList.innerHTML = ''; // clear current results
@@ -49,6 +57,16 @@ function listDetails(trail) {
 
 //PLEASE CHANGE HERE!!!!
 function addDetails(itemList, trail) {
+=======
+function listDetails(trail){
+    var itemList = document.querySelector('#item-list');
+    itemList.innerHTML = ''; // clear current results
+    addDetails(itemList, trail);
+}
+
+//PLEASE CHANGE HERE!!!!
+function addDetails(itemList, trail){
+>>>>>>> merge multiple html files, add js and backend api
 	//create the <li> tag and specify the id and class attributes
 	var li = $create('li', {
 		id: trail.id,
@@ -58,6 +76,7 @@ function addDetails(itemList, trail) {
 	li.dataset.trail_id = trail.id;
 
 	//trail image
+<<<<<<< HEAD
 	if (trail.imgSmallMed) {
 		li.appendChild($create('img', {
 			src: trail.imgSmallMed
@@ -68,13 +87,29 @@ function addDetails(itemList, trail) {
 		}));
 	}
 
+=======
+	if(trail.imgSmallMed){
+		li.appendChild($create('img', {
+			src : trail.imgSmallMed
+		}));
+	} else{
+		li.appendChild($create('img', {
+			src : 'https://via.placeholder.com/100'
+		}));
+	}	
+	
+>>>>>>> merge multiple html files, add js and backend api
 	//trail name
 	var trailName = $create('a', {
 		className: 'trail-name',
 	});
 	trailName.innerHTML = trail.name;
 	li.appendChild(trailName);
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> merge multiple html files, add js and backend api
 	//section
 	var section = $create('div');
 	//trail length
@@ -83,6 +118,7 @@ function addDetails(itemList, trail) {
 	});
 	trailLength.innerHTML = trail.length;
 	li.appendChild(trailLength);
+<<<<<<< HEAD
 
 	//section
 	var section = $create('div');
@@ -94,6 +130,19 @@ function addDetails(itemList, trail) {
 	address.innerHTML = trail.location;
 	li.appendChild(address);
 
+=======
+	
+	//section
+	var section = $create('div');
+	
+	// address
+	var address = $create('p', {
+		className : 'trail-address'
+	});
+	address.innerHTML = trail.location;
+	li.appendChild(address);
+	
+>>>>>>> merge multiple html files, add js and backend api
 	itemList.appendChild(li);
 }
 
@@ -108,9 +157,16 @@ function addDetails(itemList, trail) {
  * </div>
  * <p class="item-address">Superior, Colorado</p>
  */
+<<<<<<< HEAD
 function addItem(itemList, item) {
 	var item_id = 'item-' + item.id;
 
+=======
+function addItem(itemList, item){
+	setNearbys(user_Id, item.id); //add row to nearbys db
+	var item_id = 'item-' + item.id;
+	
+>>>>>>> merge multiple html files, add js and backend api
 	//create the <li> tag and specify the id and class attributes
 	var li = $create('li', {
 		id: item_id,
@@ -120,7 +176,11 @@ function addItem(itemList, item) {
 
 	//set the data attributes <li data-item_id="xxxxx">
 	li.dataset.item_id = item.id;
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> merge multiple html files, add js and backend api
 	//item image
 	if (item.imgSmallMed) {
 		li.appendChild($create('img', {
@@ -130,14 +190,20 @@ function addItem(itemList, item) {
 		li.appendChild($create('img', {
 			src: 'https://via.placeholder.com/100'
 		}));
+<<<<<<< HEAD
 	}
 
+=======
+	}	
+	
+>>>>>>> merge multiple html files, add js and backend api
 	//section
 	var section = $create('div');
 
 	//title
 	var title = $create('a', {
 		className: 'item-link',
+<<<<<<< HEAD
 		href: '#',
 	});
 	title.innerHTML = item.name;
@@ -146,6 +212,16 @@ function addItem(itemList, item) {
 	}
 	section.appendChild(title)
 
+=======
+		href : '#',
+	});
+	title.innerHTML = item.name;
+	title.onclick = function(){
+		loadTrailInfo(item);
+	}
+	section.appendChild(title)
+	
+>>>>>>> merge multiple html files, add js and backend api
 	// trial name
 	//	var name = $create('p', {
 	//		className : 'item-name'
