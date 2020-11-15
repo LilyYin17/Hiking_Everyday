@@ -31,6 +31,20 @@ function showRegisterResult(registerMessage) {
 function clearRegisterResult() {
     document.querySelector('#register-result').innerHTML = '';
 }
+
+function showModal() {
+	var modal = document.getElementById("myModal");
+	showElement(modal);
+	$(".filterToggle").click(function(){
+		$(".collapse").collapse('toggle');
+	});
+}
+
+function hideModal() {
+	var modal = document.getElementById("myModal");
+	hideElement(modal);
+}
+
 /**
  * List nearby items based on the data received
  * @params items - An array of item JSON objects
@@ -73,15 +87,15 @@ function addDetails(itemList, trail){
 		li.appendChild($create('img', {
 			src : 'https://via.placeholder.com/100'
 		}));
-	}	
-	
+	}
+
 	//trail name
 	var trailName = $create('a', {
 		className: 'trail-name',
 	});
 	trailName.innerHTML = trail.name;
 	li.appendChild(trailName);
-	
+
 	//section
 	var section = $create('div');
 	//trail length
@@ -90,17 +104,17 @@ function addDetails(itemList, trail){
 	});
 	trailLength.innerHTML = trail.length;
 	li.appendChild(trailLength);
-	
+
 	//section
 	var section = $create('div');
-	
+
 	// address
 	var address = $create('p', {
 		className : 'trail-address'
 	});
 	address.innerHTML = trail.location;
 	li.appendChild(address);
-	
+
 	itemList.appendChild(li);
 }
 
@@ -118,7 +132,7 @@ function addDetails(itemList, trail){
 function addItem(itemList, item){
 	setNearbys(user_Id, item.id); //add row to nearbys db
 	var item_id = 'item-' + item.id;
-	
+
 	//create the <li> tag and specify the id and class attributes
 	var li = $create('li', {
 		id: item_id,
@@ -137,8 +151,8 @@ function addItem(itemList, item){
 		li.appendChild($create('img', {
 			src: 'https://via.placeholder.com/100'
 		}));
-	}	
-	
+	}
+
 	//section
 	var section = $create('div');
 
@@ -152,6 +166,16 @@ function addItem(itemList, item){
 		loadTrailInfo(item);
 	}
 	section.appendChild(title)
+<<<<<<< HEAD
+=======
+
+	// trial name
+	//	var name = $create('p', {
+	//		className : 'item-name'
+	//	});
+	//	name.innerHTML = item.name;
+	//	section.appendChild(name);
+>>>>>>> 5909081af4f22eb94d49d299c2795fdd40f387da
 
 	li.appendChild(section);
 
