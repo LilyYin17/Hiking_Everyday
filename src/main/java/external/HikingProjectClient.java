@@ -94,20 +94,4 @@ public class HikingProjectClient {
 	private String getStringFieldOrEmpty(JSONObject obj, String key) {
 		return obj.isNull(key)? "" : obj.getString(key);
 	}
-	
-//	public static void main(String[] args) {
-//		HikingProjectClient client = new HikingProjectClient();
-//		List<TrailItem> list = client.search(40.0274, -105.2519); //lat=40.0274&lon=-105.2519 as test case
-//		
-//		for(TrailItem item : list) {
-//			JSONObject jsonObj = item.toJSONObject();
-//			System.out.println(jsonObj);
-//		}
-//	}
 }
-
-
-
-
-
-

@@ -152,13 +152,6 @@ function addItem(itemList, item){
 		loadTrailInfo(item);
 	}
 	section.appendChild(title)
-	
-	// trial name
-	//	var name = $create('p', {
-	//		className : 'item-name'
-	//	});
-	//	name.innerHTML = item.name;
-	//	section.appendChild(name);
 
 	li.appendChild(section);
 
