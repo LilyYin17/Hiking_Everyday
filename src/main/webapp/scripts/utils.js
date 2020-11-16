@@ -166,16 +166,6 @@ function addItem(itemList, item){
 		loadTrailInfo(item);
 	}
 	section.appendChild(title)
-<<<<<<< HEAD
-=======
-
-	// trial name
-	//	var name = $create('p', {
-	//		className : 'item-name'
-	//	});
-	//	name.innerHTML = item.name;
-	//	section.appendChild(name);
->>>>>>> 5909081af4f22eb94d49d299c2795fdd40f387da
 
 	li.appendChild(section);
 
