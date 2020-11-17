@@ -40,6 +40,11 @@ function showModal() {
 	});
 }
 
+function hideModal() {
+	var modal = document.getElementById("myModal");
+	hideElement(modal);
+}
+
 /**
  * List nearby items based on the data received
  * @params items - An array of item JSON objects
