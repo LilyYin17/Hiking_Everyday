@@ -3,6 +3,7 @@
 var lat = 40.0274;
 var lng = -105.2519;
 var user_Id = 'empty';
+var user_filter = 'no';
 init();
 
 // entry
@@ -12,8 +13,15 @@ function init() {
 	document.querySelector('#profile-btn').addEventListener('click', showProfileForm);
 	document.querySelector('#home-btn').addEventListener('click', showHomePage);
 	document.querySelector('#nearby-btn').addEventListener('click', showHomePage);
-  document.querySelector('#recommend-btn').addEventListener('click', showJustForYou);
-  document.querySelector('.close').addEventListener('click', hideModal);
+	document.querySelector('#recommend-btn').addEventListener('click', showJustForYou);
+	document.querySelector('.close').addEventListener('click', hideModal);
+	
+	//logic for user to disable/enable filter selection and save the choice
+	document.querySelector('#Chill-btn').addEventListener('click', changeFilter_Chill);
+	document.querySelector('#Challenge-btn').addEventListener('click', changeFilter_Challenge);
+	document.querySelector('#Exhausted-btn').addEventListener('click', changeFilter_Exhausted);
+	document.getElementById('submit-filter').addEventListener('click', saveFilter);
+	document.getElementById('Enable-Filter').addEventListener('click',changeFilterOption);
 };
 
 //initMap function
@@ -26,7 +34,7 @@ function initMap() {
     });
 
 	//display loading message
-    showErrorMessage('No nearby trials. Please enter zipcode or city name.');
+    showErrorMessage('No nearby trails. Please enter zipcode or city name.');
   }
 
 
@@ -61,7 +69,7 @@ function showProfileForm(){
     hideElement(itemList);
     hideElement(avatar);
     hideElement(welcomeMsg);
-
+    
     clearRegisterResult();
     showElement(profileForm);
 }
@@ -91,10 +99,8 @@ function showTrailInfo() {
 
 //function to show just for you page
 function showJustForYou() {
-  console.log('In howJustForYou()');
   showModal();
-	loadJustForYouItems(user_Id);
-	console.log('Done howJustForYou()');
+  loadJustForYouItems(user_Id);
 }
 
 //function to calculate the user's fitness level
@@ -134,4 +140,32 @@ function calculateLevel() {
         document.getElementById('displayLevel').innerHTML = error;
     }
     register(fitnessLevel);
+}
+
+function changeFilterOption() {
+	var checkBtn = document.getElementById("Enable-Filter");
+	var check = !(checkBtn.dataset.check === 'true');
+	checkBtn.dataset.check = check;
+	if(check === 'true') user_filter = 'default';
+	else user_filter = 'no';
+}
+
+function changeFilter_Chill() {
+	activeBtn('Chill-btn');
+	user_filter = document.getElementById('Chill-btn').value;
+}
+
+function changeFilter_Challenge() {
+	activeBtn('Challenge-btn');
+	user_filter = document.getElementById('Challenge-btn').value;
+}
+
+function changeFilter_Exhausted() {
+	activeBtn('Exhausted-btn');
+	user_filter = document.getElementById('Exhausted-btn').value;
+}
+
+function hideModal() {
+	var modal = document.getElementById("myModal");
+	hideElement(modal);
 }

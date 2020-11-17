@@ -68,41 +68,7 @@ function loadTrailInfo(item){
 }
 
 /**
- * API #3 Load justForYou items API end point: [GET]
- * /recommendation?user_id=1111
- */
-function loadJustForYouItems() {
-	console.log('in load just for you function');
-	activeBtn('recommend-btn');
-	
-	//The request parameters
-	var url = './search';
-	var params = 'lat=' + lat + '&lon=' + lng;
-	var data = null;
-	
-	//display loading message
-	showLoadingMessage('loading nearby items...');
-	//make ajax call
-	ajax('GET', url + '?' + params, data, 
-	//successful callback
-	function(res){
-		var items = JSON.parse(res);
-		if(!items || items.length === 0){
-			showWarningMessage('No nearby trials.');
-		} else{
-			console.log(items);
-			listItems(items);
-		}
-	}, 
-	//failed callback
-	function(){
-		showErrorMessage('Cannot load nearby trails.');
-	}
-	); //end of ajax function
-}
-
-/**
- * API #4 register the user 
+ * API #3 register the user 
  * 
  * @parameter: user's calculated fitnessLevel
  * 
@@ -115,7 +81,7 @@ function register(fitnessLevel){
 	user_Id = user_name;
 	var user_level = fitnessLevel;
 	if(user_name === ""){
-		showRegisterResult('Please enter a valid p');
+		showRegisterResult('Please enter a valid name');
     	return
 	}
 	
@@ -145,32 +111,44 @@ function register(fitnessLevel){
 }
 
 /**
- * API #5 Toggle filter selections
+ * API #4 Toggle filter selections
  *
  * @param userFilter 
  *
  * API end point: [POST] /filter request json data: {
  * userId, filter: }
  */
-function changeFilter(userFilter){
+function saveFilter(){
+	console.log('in saveFilter function');
+	//check whether user click to enable the filter
+	var checkBtn = document.getElementById("Enable-Filter");
+	var check = checkBtn.dataset.check;
+	
+	if(check === 'false'){ 
+		user_filter = 'no';
+	} else if(check === 'true' && user_filter === 'no'){
+		user_filter = 'default';
+	}
+	
 	//request parameters
 	var url = './filter';
 	var req = JSON.stringify({
 		userId: user_Id,
-		filter: userFilter
+		filter: user_filter
 	});
+	
 	ajax('POST', url, req,
 		//successful callback
 		function(res){
 			var result = JSON.parse(res);
 			if(result.status === 'OK' || result.result === 'SUCCESS'){
-				loadJustForYouItems(userId);
+				loadJustForYouItems(user_Id);
 			}
 	});
 }
 
 /**
- * API #6 Load the just for you trial info API end point: [GET]
+ * API #5 Load the just for you trial info API end point: [GET]
  * @param userId
  * API end point: [GET]
  * /filter?userId=xxxx
@@ -187,14 +165,20 @@ function loadJustForYouItems(userId){
 	var data = null;
 	// display loading message
     showLoadingMessage('Loading recommended trail...');
-    
+    console.log("in loadJustForYouItems " + user_Id);
+	console.log("in loadJustForYouItems " + user_filter);
+	
+    if(user_filter === 'no'){
+    	showWarningMessage('No recommended item. Make sure you have enable just for you.');
+    	return;
+    }
     //make ajax call
     ajax('GET', url, data,
     	//successful callback
     	function(res){
     		var items = JSON.parse(res);
     		if(!items || items.length === 0){
-    			showWarningMessage('No recommended item. Make sure you have set the filter or filled the profile form.');
+    			showWarningMessage('No recommended item. Please try another filter.');
     		} else{
     			listItems(items);
     		}
@@ -206,7 +190,7 @@ function loadJustForYouItems(userId){
     );
 }
 /**
- * API #7 insert new row to nearbys db 
+ * API #6 insert new row to nearbys db 
  *
  * @param user_id, item_id
  *

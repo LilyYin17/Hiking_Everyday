@@ -11,7 +11,7 @@
 		<title>Hiking Everyday</title>
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!-- 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
   		<link rel="stylesheet" href="styles/main.css">
 	</head>
 
@@ -141,7 +141,8 @@
 							<span class="close">&times;</span>
 							<!-- Collapse begin here-->
 							<h4>Customize Your Trail</h4>
-							<input type="checkbox" id="Enable-Filter" name="Enable-Filter" value="YES">
+							<!-- <input type="checkbox" id="Enable-Filter" name="Enable-Filter" value="YES"> -->
+							<input type="checkbox" id="Enable-Filter" name="Enable-Filter" data-check="false">
 							<label for="Enable-Filter" class="btn btn-primary filterToggle"> Click to Enable Filter</label><br>
 						</div>
 
@@ -149,15 +150,18 @@
 							<div class="container">
 								<p>How do you want to feel? (Optional)</p>
 								<div class="btn-group">
-									<button type="button" class="btn btn-primary">Chill</button>
+									<!-- <button type="button" class="btn btn-primary">Chill</button>
 									<button type="button" class="btn btn-primary">Challenge</button>
-									<button type="button" class="btn btn-primary">Exhausted</button>
+									<button type="button" class="btn btn-primary">Exhausted</button> -->
+									<button type="button" id="Chill-btn" class="btn btn-primary" value='Chill'>Chill</button>
+									<button type="button" id="Challenge-btn" class="btn btn-primary" value='Challenge'>Challenge</button>
+									<button type="button" id="Exhausted-btn" class="btn btn-primary" value='Exhausted'>Exhausted</button>
 								</div>
 							</div>
 						</div>
 
 						<div class="modal-footer">
-							<button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> SAVE</button>
+							<button id="submit-filter" type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> SAVE</button>
 						</div>
 					</div>
 				</div>

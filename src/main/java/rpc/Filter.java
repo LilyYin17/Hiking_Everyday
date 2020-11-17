@@ -34,7 +34,7 @@ public class Filter extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String userId = request.getParameter("userId");
 		MySQLConnection conn = new MySQLConnection();
-		List<TrailItem> trailList = conn.getTrailList(userId);
+		Set<TrailItem> trailList = conn.getTrailList(userId);
 		conn.close();
 		
 		JSONArray array = new JSONArray();

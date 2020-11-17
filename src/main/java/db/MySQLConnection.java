@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
 
+import JustForYou.JustForYou;
 import entity.TrailItem;
 import entity.TrailItem.TrailItemBuilder;
 
@@ -121,9 +122,6 @@ public class MySQLConnection {
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setString(1, userId);
 			statement.setInt(2, trailId);
-//			System.out.print("userId is " + userId);
-//			System.out.println("trailId is " + trailId);
-//			System.out.println();
 			statement.executeUpdate();
 			return true;
 		} catch (SQLException e) {
@@ -137,32 +135,155 @@ public class MySQLConnection {
 			System.err.println("DB connection failed");
 			return;
 		}
-		String sql = "UPDATE users SET filter = " + filter + " WHERE userId = " + userId;
+		
+		String sql = "UPDATE users SET filter=? WHERE userId=?";
 		try {
 			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setString(1, filter);
+			statement.setString(2, userId);
 			statement.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
 	
-	//NEED TO CHANGE
-	public List<TrailItem> getTrailList(String userId){
+	public Set<TrailItem> getTrailList(String userId){
 		if (conn == null) {
 			System.err.println("DB connection failed");
-			return new ArrayList<>();
+			return new HashSet<>();
 		}
-		List<TrailItem> trailList = new ArrayList<>();
+		Set<TrailItem> trailList = new HashSet<>();
 		
-/*	BUSINESS LOGIC
- * 	when in this function, user must has the fitnesslevel
- *  case1: filter == null || filter == 'no', res same as nearby
- *  case2: user click save, filter == 'fitnesslevel', list by fitnesslevel
- *  case3: filter == Chill 
- *  case4: filter == Challenge
- *  case5: filter == Exhausted
- */
+		//step1: get the user's filter
+		String userFilter = getUserFilterById(userId);
 		
+		//step2: business logic to select the corresponding trail
+		if(userFilter.equals("no")) {
+			return trailList; 
+		} else if(userFilter.equals("default")) {
+			String userFitnessLevel = getUserFitnesslevel(userId);
+			if(userFitnessLevel.equals("Easy")) userFilter = "Chill";
+			else if(userFitnessLevel.equals("Intermediate")) userFilter = "Challenge";
+			else userFilter = "Exhausted";
+		}
+		System.out.println("user filter is " + userFilter);
+		
+		//step3: get user's nearby trails
+		Set<Integer> nearbyTrails = getNearbyTrails(userId);
+		
+		//step4: sql to get all the trails
+		Set<Integer> filterTrailList = new HashSet<>();
+		if(userFilter.equals("Chill")) {
+			String filter1 = "green";
+			String filter2 = "greenBlue";
+			filterTrailList = getTrailListHelper(filter1, filter2);
+		} else if(userFilter.equals("Challenge")) {
+			String filter1 = "blue";
+			filterTrailList = getTrailListHelper(filter1, filter1);
+		} else if (userFilter.equals("Exhausted")) {
+			String filter1 = "blueBlack";
+			String filter2 = "black";
+			filterTrailList = getTrailListHelper(filter1, filter2);
+		}
+		
+		JustForYou getRecommend = new JustForYou();
+		trailList = getRecommend.recommend(nearbyTrails, filterTrailList);
+		System.out.println(trailList.size());
 		return trailList;
+	}
+	
+	//find all the trailId which satisfied the filter
+	private Set<Integer> getTrailListHelper(String filter1, String filter2){
+		if (conn == null) {
+			System.err.println("DB connection failed");
+			return new HashSet<>();
+		}
+		Set<Integer> filterTrailList = new HashSet<>();
+		String sql = "SELECT * FROM trails WHERE difficulity = ?";
+		
+		try {
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setString(1, filter1);
+			ResultSet rs = statement.executeQuery();
+			while (rs.next()) {
+				filterTrailList.add(rs.getInt("trailId"));
+			}
+			
+			statement.setString(1, filter2);
+			rs = statement.executeQuery();
+			while (rs.next()) {
+				filterTrailList.add(rs.getInt("trailId"));
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return filterTrailList;
+	}
+	
+	//help function to find user's nearby trails by given userId
+	private Set<Integer> getNearbyTrails(String userId){
+		if (conn == null) {
+			System.err.println("DB connection failed");
+			return new HashSet<>();
+		}
+		Set<Integer> nearbyTrails = new HashSet<>();
+		String sql = "SELECT * FROM nearbys WHERE userId = ?";
+		try {
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setString(1, userId);
+			ResultSet rs = statement.executeQuery();
+			while(rs.next()) {
+				nearbyTrails.add(rs.getInt("trailId"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return nearbyTrails;
+	}
+	
+	//help function to find user's filter by given userId
+	private String getUserFilterById(String userId) {
+		if (conn == null) {
+			System.err.println("DB connection failed");
+			return "no";
+		}
+		String userFilter = "no";
+		String sql = "SELECT filter FROM users WHERE userId = ?";
+		try {
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setString(1, userId);
+			ResultSet rs = statement.executeQuery();
+			if(rs.next()) {
+				userFilter = rs.getString("filter");
+				return userFilter;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return userFilter;
+	}
+	
+	//help function to find user's fitnesslevel by given userId
+	private String getUserFitnesslevel(String userId) {
+		if (conn == null) {
+			System.err.println("DB connection failed");
+			return "empty";
+		}
+		String userFitnesslevel = "empty";
+		String sql = "SELECT fitnesslevel FROM users WHERE userId = ?";
+		try {
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setString(1, userId);
+			ResultSet rs = statement.executeQuery();
+			if(rs.next()) {
+				userFitnesslevel = rs.getString("fitnesslevel");
+				System.out.println("user fitnesslevel is " + userFitnesslevel);
+				return userFitnesslevel;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return userFitnesslevel;
 	}
 }
