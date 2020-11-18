@@ -157,7 +157,6 @@ function addDetails(itemList, trail){
 		window.location.href = "https://maps.google.com/?q=" + trailLat + "," + trailLng
 		};
 	li.appendChild(dirButton);
-
 	itemList.appendChild(li);
 }
 

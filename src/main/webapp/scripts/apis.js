@@ -27,7 +27,7 @@ function loadNearbyItems(){
 	},
 	//failed callback
 	function(){
-		showErrorMessage('Cannot load nearby trails.');
+		showErrorMessage('No nearby trails. Please make sure you have entered zipcode or city name.');
 	}
 	); //end of ajax function
 }

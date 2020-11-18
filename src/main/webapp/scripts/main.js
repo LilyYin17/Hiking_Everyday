@@ -1,7 +1,9 @@
 // for now, default location info
 
-var lat = 40.0274;
-var lng = -105.2519;
+//var lat = 40.0274;
+//var lng = -105.2519;
+var lat;
+var lng;
 var user_Id = 'empty';
 var user_filter = 'no';
 init();
@@ -20,6 +22,7 @@ function init() {
 	document.querySelector('#Chill-btn').addEventListener('click', changeFilter_Chill);
 	document.querySelector('#Challenge-btn').addEventListener('click', changeFilter_Challenge);
 	document.querySelector('#Exhausted-btn').addEventListener('click', changeFilter_Exhausted);
+	document.querySelector('#Myfitness-btn').addEventListener('click', changeFilter_Myfitness);
 	document.getElementById('submit-filter').addEventListener('click', saveFilter);
 	document.getElementById('Enable-Filter').addEventListener('click',changeFilterOption);
 };
@@ -166,18 +169,19 @@ function changeFilterOption() {
 }
 
 function changeFilter_Chill() {
-	activeBtn('Chill-btn');
 	user_filter = document.getElementById('Chill-btn').value;
 }
 
 function changeFilter_Challenge() {
-	activeBtn('Challenge-btn');
 	user_filter = document.getElementById('Challenge-btn').value;
 }
 
 function changeFilter_Exhausted() {
-	activeBtn('Exhausted-btn');
 	user_filter = document.getElementById('Exhausted-btn').value;
+}
+
+function changeFilter_Myfitness() {
+	user_filter = document.getElementById('Myfitness-btn').value;
 }
 
 function hideModal() {

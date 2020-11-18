@@ -6,7 +6,7 @@
 
 body {
 	background: #434343;
-	color: #FFFFFF;
+	color: #000000;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 300;
 	font-size: 0.9em;
@@ -293,7 +293,7 @@ footer ul li {
 	overflow: auto; /* Enable scroll if needed */
 	background-color: rgb(0,0,0); /* Fallback color */
 	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
+  }	
 
   /* Modal Content */
   .modal-content {
@@ -304,12 +304,12 @@ footer ul li {
 	border: 1px solid #888;
 	width: 80%;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-	-webkit-animation-name: animatetop;
-	-webkit-animation-duration: 0.4s;
+ 	-webkit-animation-name: animatetop;
+	-webkit-animation-duration: 0.4s; 
 	animation-name: animatetop;
 	animation-duration: 0.4s
   }
-
+  
   /* Add Animation */
   @-webkit-keyframes animatetop {
 	from {top:-300px; opacity:0}
@@ -338,15 +338,16 @@ footer ul li {
 
   .modal-header {
 	padding: 2px 16px;
-	background-color: #5cb85c;
+	background-color: #F3BB43;
 	color: white;
   }
 
-  .modal-body {padding: 2px 16px;}
+  .modal-body {
+  	padding: 2px 16px;
+  }
 
   .modal-footer {
 	padding: 2px 16px;
-	background-color: #5cb85c;
+	background-color: #F3BB43;
 	color: white;
   }
- 
