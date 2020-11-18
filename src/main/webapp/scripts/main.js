@@ -27,20 +27,6 @@ function init() {
 	document.getElementById('Enable-Filter').addEventListener('click',changeFilterOption);
 };
 
-function initialize() {
-	initMap();
-	//initTrailMap();
-}
-
-//initTrailMap function
-//function initTrailMap() {
-//	let map
-//	map = new google.maps.Map(document.getElementById("map"), {
-//		zoom: 12,
-//		center: {lat: -34.397, lng: 150.644},
-//	});
-//}
-
 //initMap function
 function initMap() {
 	var profileForm = document.querySelector('#profile-form');
@@ -52,8 +38,7 @@ function initMap() {
 
 	//display loading message
     showErrorMessage('No nearby trails. Please enter zipcode or city name.');
- }
- 
+  }
 
 
 // geocodeAddress function

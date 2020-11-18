@@ -81,7 +81,8 @@ function addDetails(itemList, trail){
 	//trail image
 	if(trail.imgSmallMed){
 		li.appendChild($create('img', {
-			src : trail.imgSmallMed
+			src : trail.imgSmallMed,
+			style : 'width:100%; height:500px'
 		}));
 	} else{
 		li.appendChild($create('img', {
@@ -95,7 +96,7 @@ function addDetails(itemList, trail){
 	var trailName = $create('a', {
 		className: 'trail-name',
 	});
-	trailName.innerHTML = trail.name;
+	trailName.innerHTML = 'Trail Name: ' + trail.name;
 	li.appendChild(trailName);
 	linebreak = document.createElement("br");
 	li.appendChild(linebreak);
@@ -106,7 +107,7 @@ function addDetails(itemList, trail){
 	var trailLength = $create('a', {
 		className: 'trail-length',
 	});
-	trailLength.innerHTML = trail.length;
+	trailLength.innerHTML = 'Trail Length: ' + trail.length + ' miles';
 	li.appendChild(trailLength);
 
 	//section
@@ -116,8 +117,24 @@ function addDetails(itemList, trail){
 	var address = $create('p', {
 		className : 'trail-address'
 	});
-	address.innerHTML = trail.location;
+	address.innerHTML = 'Trail Location: ' + trail.location;
 	li.appendChild(address);
+	
+	// section
+	var section = $create('div');
+	// direction button
+	var trailLat = trail.latitude;
+	var trailLng = trail.longitude;
+	var map_url = 'https://maps.google.com/?q=' + trailLat + ',' + trailLng + '&language=en&region=US';
+	var dirButton = $create('button', {
+		className: 'trail-direction',
+	});
+	console.log(trailLat, trailLng);
+	dirButton.innerHTML = "Direction";
+	dirButton.onclick =  function(){
+		window.open(map_url)
+	};
+	li.appendChild(dirButton);
 	
 	// section
 	var section = $create('div');
@@ -127,8 +144,6 @@ function addDetails(itemList, trail){
 		className: 'trail-map',
 		style : 'width:100%; height:500px',
 	});
-	var trailLat = trail.latitude;
-	var trailLng = trail.longitude;
 	$(function(){
 		function initTrailMap() {
 			const trailHead = {lat: trailLat, lng: trailLng};
@@ -144,19 +159,7 @@ function addDetails(itemList, trail){
 		initTrailMap()
 	});
 	li.appendChild(trailMap);
-	
-	// section
-	var section = $create('div');
-	// direction button
-	var dirButton = $create('button', {
-		className: 'trail-direction',
-	});
-	console.log(trailLat, trailLng);
-	dirButton.innerHTML = "Direction";
-	dirButton.onclick =  function(){
-		window.location.href = "https://maps.google.com/?q=" + trailLat + "," + trailLng
-		};
-	li.appendChild(dirButton);
+
 	itemList.appendChild(li);
 }
 
