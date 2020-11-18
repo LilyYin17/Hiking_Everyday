@@ -68,7 +68,6 @@ function listDetails(trail){
     addDetails(itemList, trail);
 }
 
-//PLEASE CHANGE HERE!!!!
 function addDetails(itemList, trail){
 	//create the <li> tag and specify the id and class attributes
 	var li = $create('li', {
@@ -103,6 +102,7 @@ function addDetails(itemList, trail){
 	
 	//section
 	var section = $create('div');
+	
 	//trail length
 	var trailLength = $create('a', {
 		className: 'trail-length',
@@ -120,6 +120,18 @@ function addDetails(itemList, trail){
 	address.innerHTML = 'Trail Location: ' + trail.location;
 	li.appendChild(address);
 	
+	//section
+	var section = $create('div');
+
+	// address
+	var difficulty = $create('p', {
+		className : 'trail-difficulty'
+	});
+	difficulty.innerHTML = 'Trail difficulty: ' + trail.difficulty;
+	li.appendChild(difficulty);
+	
+	linebreak = document.createElement("br");
+	li.appendChild(linebreak);
 	// section
 	var section = $create('div');
 	// direction button
