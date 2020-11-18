@@ -88,6 +88,8 @@ function addDetails(itemList, trail){
 			src : 'https://via.placeholder.com/100'
 		}));
 	}
+	linebreak = document.createElement("br");
+	li.appendChild(linebreak);
 
 	//trail name
 	var trailName = $create('a', {
@@ -95,7 +97,9 @@ function addDetails(itemList, trail){
 	});
 	trailName.innerHTML = trail.name;
 	li.appendChild(trailName);
-
+	linebreak = document.createElement("br");
+	li.appendChild(linebreak);
+	
 	//section
 	var section = $create('div');
 	//trail length
@@ -114,6 +118,45 @@ function addDetails(itemList, trail){
 	});
 	address.innerHTML = trail.location;
 	li.appendChild(address);
+	
+	// section
+	var section = $create('div');
+	// map
+	var trailMap = $create('div', {
+		id: 'map',
+		className: 'trail-map',
+		style : 'width:100%; height:500px',
+	});
+	var trailLat = trail.latitude;
+	var trailLng = trail.longitude;
+	$(function(){
+		function initTrailMap() {
+			const trailHead = {lat: trailLat, lng: trailLng};
+			const map = new google.maps.Map(document.getElementById("map"), {
+				zoom: 12,
+				center: trailHead,
+			});
+			const marker = new google.maps.Marker({
+				position: trailHead,
+				map: map,
+			});
+		}
+		initTrailMap()
+	});
+	li.appendChild(trailMap);
+	
+	// section
+	var section = $create('div');
+	// direction button
+	var dirButton = $create('button', {
+		className: 'trail-direction',
+	});
+	console.log(trailLat, trailLng);
+	dirButton.innerHTML = "Direction";
+	dirButton.onclick =  function(){
+		window.location.href = "https://maps.google.com/?q=" + trailLat + "," + trailLng
+		};
+	li.appendChild(dirButton);
 
 	itemList.appendChild(li);
 }
