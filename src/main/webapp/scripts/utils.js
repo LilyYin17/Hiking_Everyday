@@ -127,7 +127,7 @@ function addDetails(itemList, trail){
 	var difficulty = $create('p', {
 		className : 'trail-difficulty'
 	});
-	difficulty.innerHTML = 'Trail difficulty: ' + trail.difficulty;
+	difficulty.innerHTML = 'Trail Difficulty: ' + trail.difficulty;
 	li.appendChild(difficulty);
 	
 	linebreak = document.createElement("br");

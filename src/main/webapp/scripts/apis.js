@@ -169,7 +169,7 @@ function loadJustForYouItems(userId){
 	console.log("in loadJustForYouItems " + user_filter);
 	
     if(user_filter === 'no'){
-    	showWarningMessage('No recommended item. Make sure you have enable just for you.');
+    	showWarningMessage('No recommended trails. Make sure you have enable just for you.');
     	return;
     }
     //make ajax call
