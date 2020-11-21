@@ -106,7 +106,7 @@ function showJustForYou() {
   loadJustForYouItems(user_Id);
 }
 
-//function to calculate the user's fitness level
+//function to calculate recommended trail level
 function calculateLevel() {
 	var userName = document.getElementById('user-name').value;
 	console.log(document.getElementById('user-name').value);
@@ -124,7 +124,12 @@ function calculateLevel() {
     } else if (age > 70) {
         sum -= 2;
     }
-    // Finalize sum and display message
+    displayLevel(sum);
+    register(fitnessLevel);
+}
+
+//function to display recommended trail level
+function displayLevel(sum) {
     var level_1 = "Easy";
     var level_2 = "Intermediate";
     var level_3 = "Difficult";
@@ -142,7 +147,7 @@ function calculateLevel() {
     } else {
         document.getElementById('displayLevel').innerHTML = error;
     }
-    register(fitnessLevel);
+    return fitnessLevel;
 }
 
 function changeFilterOption() {
