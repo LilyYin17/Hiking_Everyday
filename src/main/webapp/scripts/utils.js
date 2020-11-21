@@ -156,13 +156,17 @@ function addDetails(itemList, trail){
 		className: 'trail-map',
 		style : 'width:100%; height:500px',
 	});
+	// function to call google api map
 	$(function(){
 		function initTrailMap() {
+			// set trailHead lat and lng
 			const trailHead = {lat: trailLat, lng: trailLng};
+			// display map in html id=map area
 			const map = new google.maps.Map(document.getElementById("map"), {
 				zoom: 12,
 				center: trailHead,
 			});
+			// display trail head in the map
 			const marker = new google.maps.Marker({
 				position: trailHead,
 				map: map,
