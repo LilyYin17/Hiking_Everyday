@@ -95,9 +95,6 @@ function addDetails(itemList, trail){
 	linebreak = document.createElement("br");
 	li.appendChild(linebreak);
 	
-	//section
-	var section = $create('div');
-	
 	//trail length
 	var trailLength = $create('a', {
 		className: 'trail-length',
@@ -105,18 +102,12 @@ function addDetails(itemList, trail){
 	trailLength.innerHTML = 'Trail Length: ' + trail.length + ' miles';
 	li.appendChild(trailLength);
 
-	//section
-	var section = $create('div');
-
 	// address
 	var address = $create('p', {
 		className : 'trail-address'
 	});
 	address.innerHTML = 'Trail Location: ' + trail.location;
 	li.appendChild(address);
-	
-	//section
-	var section = $create('div');
 
 	// address
 	var difficulty = $create('p', {
@@ -127,8 +118,7 @@ function addDetails(itemList, trail){
 	
 	linebreak = document.createElement("br");
 	li.appendChild(linebreak);
-	// section
-	var section = $create('div');
+
 	// direction button
 	var trailLat = trail.latitude;
 	var trailLng = trail.longitude;
