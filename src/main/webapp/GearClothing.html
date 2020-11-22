@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Gear and Clothing Recommendation</title>
-    <link rel="stylesheet" href="GearClothing.css">
+    <link rel="stylesheet" href="styles/GearClothing.css">
   </head>
   <body>
     <section id="recommendation-container">
@@ -11,11 +11,23 @@
         <header class="weather-header">
           <h2>Current Local Weather</h2>
         </header>
-        <div class="local-temp-description">
-          <div class="local-current-temp">
-            
+        <div class="todays-details">
+          <div class="todays-temperature-section">
+            <span id="todays-temperature" class=""></span>
+            <span id="current-temperature" class="">Current Temperature</span>
           </div>
-        </div>
+          <div class="weather-description-section">
+            <div class="weather-description-container">
+              <img id="weather-image">
+              <div class="weather-description-text-container"><!--div for the weather description--->
+                <span id="weather-description-text"></span>
+              </div>
+            </div>
+
+          </div>
+          </div>
+        </div><!--end todaysDetails-->
+
 
         <ul>
           <li><span>Temprature: </span><span id="temp"></span></li>
@@ -35,6 +47,6 @@
       </ul>
     </div>
   </section>
-    <script src="GearClothing.js"></script>
+    <script src="scripts/GearClothing.js"></script>
   </body>
 </html>

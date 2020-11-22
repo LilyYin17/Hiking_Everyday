@@ -38,13 +38,17 @@ function getWeather(){
       var uvIndex = response.daily[0].uvi;
       var pop = response.daily[0].pop;
       var weatherDescription = response.daily[0].weather[0].description;
+      var imgUrl = "http://openweathermap.org/img/wn/" + response.current.weather[0].icon + "@2x.png";
 
       // show the local daily weather
+      document.getElementById('todays-temperature').textContent = temp;
       document.getElementById('temp').textContent = temp;
       document.getElementById('wind').textContent = wind;
       document.getElementById('UV').textContent = uvIndex;
       document.getElementById('pop').textContent = pop;
       document.getElementById('Description').textContent = weatherDescription;
+      document.getElementById('weather-image').src=imgUrl;
+      document.getElementById('weather-description-text').textContent = weatherDescription;
 
     } else {
         console.log("Error in network request: " + req.statusText);

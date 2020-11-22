@@ -1,0 +1,28 @@
+.todays-details{
+  margin: 0 26px 25px 16px;
+  position: relative;
+  display: flex;
+  -webkit-box-oreient: horizontal;
+  -webkit-box-direction:normal
+  flex-flow: row nowrap;
+  -webkit-box-aligh: end;
+  align-items: flex-end;
+
+}
+
+
+.todays-temperature-section{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-oreient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction:column;
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+}
+
+#todays-temperature{
+  font-size: 2.5rem;
+  line-height: 1em;
+}
