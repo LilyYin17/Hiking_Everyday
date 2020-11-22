@@ -1,11 +1,14 @@
-//show button
-function hideElement(element) {
-	element.style.display = 'none';
+// hide elements
+function hideElements(...elements) {
+	elements.forEach(function (element) {
+		element.style.display = 'none';
+	})
 }
-//hide button
-function showElement(element, style) {
-	var displayStyle = style ? style : 'block';
-	element.style.display = displayStyle;
+// show elements
+function showElements(...elements) {
+	elements.forEach(function (element) {
+		element.style.display = 'block';
+	})
 }
 
 function showLoadingMessage(msg) {
@@ -34,7 +37,7 @@ function clearRegisterResult() {
 
 function showModal() {
 	var modal = document.getElementById("myModal");
-	showElement(modal);
+	showElements(modal);
 	$(".filterToggle").click(function(){
 		$(".collapse").collapse('toggle');
 	});

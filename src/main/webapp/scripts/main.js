@@ -30,7 +30,7 @@ function init() {
 //initMap function
 function initMap() {
 	var profileForm = document.querySelector('#profile-form');
-	hideElement(profileForm);
+	hideElements(profileForm);
     const geocoder = new google.maps.Geocoder();
     document.getElementById("search-btn").addEventListener("click", () => {
       geocodeAddress(geocoder);
@@ -67,14 +67,9 @@ function showProfileForm(){
     var welcomeMsg = document.querySelector('#welcome-msg');
     var profileForm = document.querySelector('#profile-form');
 
-    hideElement(searchForm);
-    hideElement(itemNav);
-    hideElement(itemList);
-    hideElement(avatar);
-    hideElement(welcomeMsg);
-    
+    hideElements(searchForm, itemNav, itemList, avatar, welcomeMsg);
     clearRegisterResult();
-    showElement(profileForm);
+    showElements(profileForm);
 }
 
 //function to go back to home page
@@ -86,12 +81,8 @@ function showHomePage(){
     var welcomeMsg = document.querySelector('#welcome-msg');
     var profileForm = document.querySelector('#profile-form');
 
-    showElement(searchForm);
-    showElement(itemNav);
-    showElement(itemList);
-    showElement(avatar);
-    showElement(welcomeMsg);
-    hideElement(profileForm);
+    showElements(searchForm, itemNav, itemList, avatar, welcomeMsg);
+    hideElements(profileForm);
     loadNearbyItems();
 }
 
@@ -176,5 +167,5 @@ function changeFilter_Myfitness() {
 
 function hideModal() {
 	var modal = document.getElementById("myModal");
-	hideElement(modal);
+	hideElements(modal);
 }
