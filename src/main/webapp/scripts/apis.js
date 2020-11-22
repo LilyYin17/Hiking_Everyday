@@ -112,9 +112,6 @@ function register(fitnessLevel){
 
 /**
  * API #4 Toggle filter selections
- *
- * @param userFilter 
- *
  * API end point: [POST] /filter request json data: {
  * userId, filter: }
  */
@@ -192,16 +189,17 @@ function loadJustForYouItems(userId){
 /**
  * API #6 insert new row to nearbys db 
  *
- * @param user_id, item_id
+ * @param user_id
+ * @param item_id
  *
  * API end point: [POST] /nearby request json data: {
  * userId, trailId: }
  */
-function setNearbys(user_Id, item_id){
+function setNearbys(user_id, item_id){
 	//request parameters
 	var url = './nearby';
 	var req = JSON.stringify({
-		userId: user_Id,
+		userId: user_id,
 		trailId: item_id
 	});
 	
