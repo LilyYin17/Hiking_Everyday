@@ -153,7 +153,7 @@ function saveFilter(){
 function loadJustForYouItems(userId){
 	console.log('loadJustForYouItems');
 	activeBtn('recommend-btn');
-	if(userId == null || userId == 'empty'){
+	if(userId == null || userId === 'empty'){
 	    showErrorMessage('Please fill the form by clicking Profile to get the best trails for you.');
 	    return
 	}
