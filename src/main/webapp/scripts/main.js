@@ -31,7 +31,7 @@ function init() {
 //initMap function
 function initMap() {
 	var profileForm = document.querySelector('#profile-form');
-	hideElement(profileForm);
+	hideElements(profileForm);
     const geocoder = new google.maps.Geocoder();
     document.getElementById("search-btn").addEventListener("click", () => {
       geocodeAddress(geocoder);
@@ -68,14 +68,9 @@ function showProfileForm(){
     var welcomeMsg = document.querySelector('#welcome-msg');
     var profileForm = document.querySelector('#profile-form');
 
-    hideElement(searchForm);
-    hideElement(itemNav);
-    hideElement(itemList);
-    hideElement(avatar);
-    hideElement(welcomeMsg);
-    
+    hideElements(searchForm, itemNav, itemList, avatar, welcomeMsg);
     clearRegisterResult();
-    showElement(profileForm);
+    showElements(profileForm);
 }
 
 //function to go back to home page
@@ -87,12 +82,8 @@ function showHomePage(){
     var welcomeMsg = document.querySelector('#welcome-msg');
     var profileForm = document.querySelector('#profile-form');
 
-    showElement(searchForm);
-    showElement(itemNav);
-    showElement(itemList);
-    showElement(avatar);
-    showElement(welcomeMsg);
-    hideElement(profileForm);
+    showElements(searchForm, itemNav, itemList, avatar, welcomeMsg);
+    hideElements(profileForm);
     loadNearbyItems();
 }
 
@@ -107,7 +98,7 @@ function showJustForYou() {
   loadJustForYouItems(user_Id);
 }
 
-//function to calculate the user's fitness level
+//function to calculate recommended trail level
 function calculateLevel() {
 	var userName = document.getElementById('user-name').value;
 	console.log(document.getElementById('user-name').value);
@@ -125,7 +116,12 @@ function calculateLevel() {
     } else if (age > 70) {
         sum -= 2;
     }
-    // Finalize sum and display message
+    displayLevel(sum);
+    register(fitnessLevel);
+}
+
+//function to display recommended trail level
+function displayLevel(sum) {
     var level_1 = "Easy";
     var level_2 = "Intermediate";
     var level_3 = "Difficult";
@@ -143,7 +139,7 @@ function calculateLevel() {
     } else {
         document.getElementById('displayLevel').innerHTML = error;
     }
-    register(fitnessLevel);
+    return fitnessLevel;
 }
 
 function changeFilterOption() {
@@ -172,5 +168,5 @@ function changeFilter_Myfitness() {
 
 function hideModal() {
 	var modal = document.getElementById("myModal");
-	hideElement(modal);
+	hideElements(modal);
 }

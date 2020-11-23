@@ -1,11 +1,14 @@
-//show button
-function hideElement(element) {
-	element.style.display = 'none';
+// hide elements
+function hideElements(...elements) {
+	elements.forEach(function (element) {
+		element.style.display = 'none';
+	})
 }
-//hide button
-function showElement(element, style) {
-	var displayStyle = style ? style : 'block';
-	element.style.display = displayStyle;
+// show elements
+function showElements(...elements) {
+	elements.forEach(function (element) {
+		element.style.display = 'block';
+	})
 }
 
 function showLoadingMessage(msg) {
@@ -34,15 +37,10 @@ function clearRegisterResult() {
 
 function showModal() {
 	var modal = document.getElementById("myModal");
-	showElement(modal);
+	showElements(modal);
 	$(".filterToggle").click(function(){
 		$(".collapse").collapse('toggle');
 	});
-}
-
-function hideModal() {
-	var modal = document.getElementById("myModal");
-	hideElement(modal);
 }
 
 /**
@@ -141,7 +139,9 @@ function addDetails(itemList, trail){
 	// section
 	linebreak = document.createElement("br");
 	li.appendChild(linebreak);
+
 	var section = $create('div');
+
 	// direction button
 	var map_url = 'https://maps.google.com/?q=' + trailLat + ',' + trailLng + '&language=en&region=US';
 	var dirButton = $create('button', {
@@ -154,9 +154,8 @@ function addDetails(itemList, trail){
 	};
 	li.appendChild(dirButton);
 	
-	// section
+	// section display trail head map using google map api
 	var section = $create('div');
-	// map
 	var trailMap = $create('div', {
 		id: 'map',
 		className: 'trail-map',

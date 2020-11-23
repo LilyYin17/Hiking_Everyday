@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
@@ -11,7 +11,6 @@
 		<title>Hiking Everyday</title>
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-<!--  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">  -->
   		<link rel="stylesheet" href="styles/main.css">
 	</head>
 
@@ -75,18 +74,6 @@
                     		<option value="0">No</option>
             			</select>
             			<br><br>
-            			Input Health Problem<br>
-            			<label>Do you have following problems? (Please check all that apply)</label><br>
-            			<input type="checkbox" id="bloodpressure" name="bloodpressure" value="-1">
-            			<label for="bloodpressure"> High blood pressure</label><br>
-            			<input type="checkbox" id="bloodsugar" name="bloodsugar" value="-1">
-            			<label for="bloodsugar"> High blood sugar</label><br>
-            			<input type="checkbox" id="cholesterol" name="cholesterol" value="-1">
-            			<label for="cholesterol"> High cholesterol</label><br>
-            			<input type="checkbox" id="diabetes" name="diabetes" value="-1">
-            			<label for="diabetes"> Diabetes</label><br>
-            			<input type="checkbox" id="none" name="none" value="0">
-            			<label for="none"> None of above</label><br><br>
         			</form>
 
         			<input type="button" value="Calculate" onclick="calculateLevel();">
@@ -142,7 +129,6 @@
 							<span class="close">&times;</span>
 							<!-- Collapse begin here-->
 							<h4>Customize Your Trail</h4>
-							<!-- <input type="checkbox" id="Enable-Filter" name="Enable-Filter" value="YES"> -->
 							<input type="checkbox" id="Enable-Filter" name="Enable-Filter" data-check="false">
 							<label for="Enable-Filter" class="btn btn-primary filterToggle"> Click to Enable Filter</label><br>
 						</div>
@@ -151,9 +137,6 @@
 							<div class="container">
 								<p>How do you want to feel? (Optional)</p>
 								<div class="btn-group">
-									<!-- <button type="button" class="btn btn-primary">Chill</button>
-									<button type="button" class="btn btn-primary">Challenge</button>
-									<button type="button" class="btn btn-primary">Exhausted</button> -->
 									<button type="button" id="Chill-btn" class="btn btn-primary" value='Chill'>Chill</button>
 									<button type="button" id="Challenge-btn" class="btn btn-primary" value='Challenge'>Challenge</button>
 									<button type="button" id="Exhausted-btn" class="btn btn-primary" value='Exhausted'>Exhausted</button>
