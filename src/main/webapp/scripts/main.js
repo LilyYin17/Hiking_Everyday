@@ -6,6 +6,7 @@ var lat;
 var lng;
 var user_Id = 'empty';
 var user_filter = 'no';
+
 init();
 
 // entry

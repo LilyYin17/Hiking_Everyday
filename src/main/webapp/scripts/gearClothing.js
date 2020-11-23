@@ -56,6 +56,6 @@ function getWeather(){
 
 /**
 function gearClothingRec(){
-  // recommend gear and clothing according to temprature
+  // recommend gear and clothing according to temperature
 }
 **/

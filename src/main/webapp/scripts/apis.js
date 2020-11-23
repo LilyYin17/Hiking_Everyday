@@ -221,3 +221,38 @@ function setNearbys(user_Id, item_id){
 		}
 	);
 }
+
+/** API #7 for feature 5, get the weather condition
+** 
+** @param lat, lng 
+** API end point: [GET]
+** as mentioned in function loadTrailInfo(item) in apis.js
+**/
+function showChecklist(trail) {
+	var thisLat = trail.latitude;
+	var thisLng = trail.longitude;
+	var trailId = trail.id;
+	
+	//get the temperature condition by call api
+	var url = './checklist';
+    var params = 'lat=' + thisLat + '&lon=' + thisLng;
+    var data = null; 
+	
+	//make ajax call
+    ajax('GET', url + '?' + params, data,
+    	//successful callback
+    	function(res) {
+    		var weatheritems = JSON.parse(res);
+    		if(!weatheritems || weatheritems.length === 0) {
+    			showWarningMessage('No Gear and Clothing recommendation.');
+    		} else {
+    			console.log(weatheritems);
+    			addGearsAndClothing(weatheritems, trail);
+    		}
+    	},
+    	//failed callback
+    	function(){
+    		showErrorMessage('Cannot load Gear and Clothing recommendation.');
+    	}
+    );
+}

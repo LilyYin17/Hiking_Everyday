@@ -69,6 +69,9 @@ function listDetails(trail){
 }
 
 function addDetails(itemList, trail){
+	var trailLat = trail.latitude;
+	var trailLng = trail.longitude;
+	
 	//create the <li> tag and specify the id and class attributes
 	var li = $create('li', {
 		id: trail.id,
@@ -90,60 +93,63 @@ function addDetails(itemList, trail){
 	}
 	linebreak = document.createElement("br");
 	li.appendChild(linebreak);
-
+	
+	var trailDetail = $create('h2', {
+		className : 'trail-details'
+	});
+	trailDetail.innerHTML = 'Trail Details:';
+	li.appendChild(trailDetail);
+	
 	//trail name
 	var trailName = $create('a', {
 		className: 'trail-name',
 	});
-	trailName.innerHTML = 'Trail Name: ' + trail.name;
+	trailName.innerHTML = 'Name: ' + trail.name;
 	li.appendChild(trailName);
 	linebreak = document.createElement("br");
 	li.appendChild(linebreak);
-	
-	//section
-	var section = $create('div');
 	
 	//trail length
 	var trailLength = $create('a', {
 		className: 'trail-length',
 	});
-	trailLength.innerHTML = 'Trail Length: ' + trail.length + ' miles';
+	trailLength.innerHTML = 'Length: ' + trail.length + ' miles';
 	li.appendChild(trailLength);
-
-	//section
-	var section = $create('div');
 
 	// address
 	var address = $create('p', {
 		className : 'trail-address'
 	});
-	address.innerHTML = 'Trail Location: ' + trail.location;
+	address.innerHTML = 'Location: ' + trail.location;
 	li.appendChild(address);
 	
-	//section
-	var section = $create('div');
-
-	// address
-	var difficulty = $create('p', {
-		className : 'trail-difficulty'
+	//add Gear & Clothing section
+	var checklist = $create('button', {
+		class : 'checklist-btn'
 	});
-	difficulty.innerHTML = 'Trail Difficulty: ' + trail.difficulty;
-	li.appendChild(difficulty);
+	checklist.innerHTML = 'Click to see checklist:';
+	checklist.onclick = function(){
+		showChecklist(trail);
+	}
+	li.appendChild(checklist);
+
+	var section = $create('div', {
+		id: 'trail-checklist'
+	});
+	li.appendChild(section);
 	
+	// section
 	linebreak = document.createElement("br");
 	li.appendChild(linebreak);
-	// section
 	var section = $create('div');
 	// direction button
-	var trailLat = trail.latitude;
-	var trailLng = trail.longitude;
 	var map_url = 'https://maps.google.com/?q=' + trailLat + ',' + trailLng + '&language=en&region=US';
 	var dirButton = $create('button', {
 		className: 'trail-direction',
 	});
 	console.log(trailLat, trailLng);
-	dirButton.innerHTML = "Direction";
-	dirButton.onclick =  function(){
+	dirButton.innerHTML = 'Navigate to the trailhead';
+	dirButton.onclick = function(){
 		window.open(map_url)
 	};
 	li.appendChild(dirButton);
@@ -301,5 +307,40 @@ function ajax(method, url, data, successCallback, errorCallback) {
 	} else {
 		xhr.setRequestHeader("Content-Type", "application/json;charset=utf-8");
 		xhr.send(data);
+	}
+}
+
+function addGearsAndClothing(weatheritems, trail) {
+	console.log('in addGearsAndClothing function');
+	var trailChecklist = document.querySelector('#trail-checklist');
+	trailChecklist.innerHTML = '';
+	
+	var title = $create('h2', {
+		className : 'trail-checklist'
+	});
+	title.innerHTML = 'Checklist for you:';
+	trailChecklist.appendChild(title);
+	
+	//check trail temperature condition and recommend gear and clothing
+	var temp = weatheritems[0].temp;
+	var wind = weatheritems[0].wind;
+	var weatherDes = weatheritems[0].weatherDes;
+	var trailLen = trail.length;
+	var trailDiff = trail.difficulty;
+	var trailHigh = trail.high;
+	
+	//for clothing and shoes
+	var clothing = $create('p', {
+		className: 'cloth',
+	});
+	if(temp < 10){
+		clothing.innerHTML = 'Temperatue is ' + weatheritems[0].temp + '°C, please bring a base layer with insulating properties such as wool or budget-friendly synthetic materials; an insulating, removable middle layer; and a waterproof/windproof outer layer.'; 
+		trailChecklist.appendChild(clothing);
+	} else if(temp < 23) {
+		clothing.innerHTML = 'Temperatue is ' + weatheritems[0].temp + '°C, a short- or long-sleeved wicking base layer. And a zip-up fleece jacket is a good addition if the temperatures are chilly. ';
+		trailChecklist.appendChild(clothing);
+	} else {
+		clothing.innerHTML = 'Temperatue is ' + weatheritems[0].temp + '°C, breathable wicking materials (no cotton) are key for shirts, bottoms and hiking socks to keep the sweat off your skin. Lighter colors absorb less heat and can keep you cooler on hot days.';
+		trailChecklist.appendChild(clothing);
 	}
 }

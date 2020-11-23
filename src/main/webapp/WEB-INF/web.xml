@@ -35,6 +35,12 @@
   	<description></description>
   	<servlet-class>rpc.Nearbys</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>Checklist</servlet-name>
+  	<display-name>Checklist</display-name>
+  	<description></description>
+  	<servlet-class>rpc.Checklist</servlet-class>
+  </servlet>
   
   <servlet-mapping>
   	<servlet-name>SearchItem</servlet-name>
@@ -56,6 +62,10 @@
   <servlet-mapping>
   	<servlet-name>Nearbys</servlet-name>
   	<url-pattern>/nearby</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Checklist</servlet-name>
+  	<url-pattern>/checklist</url-pattern>
   </servlet-mapping>
 
 </web-app>
