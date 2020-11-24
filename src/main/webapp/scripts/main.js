@@ -116,8 +116,8 @@ function calculateLevel() {
     } else if (age > 70) {
         sum -= 2;
     }
-    displayLevel(sum);
-    register(fitnessLevel);
+//    displayLevel(sum);
+    register(displayLevel(sum));
 }
 
 //function to display recommended trail level
