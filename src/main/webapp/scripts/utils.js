@@ -332,7 +332,10 @@ function addGearsAndClothing(weatheritems, trail) {
 	var clothing = $create('p', {
 		className: 'cloth',
 	});
-	if(temp < 10){
+	if(temp < 0){
+		clothing.innerHTML = 'Temperatue is ' + weatheritems[0].temp + '°C, please wearing gloves, a hat, long sleeve jersey, long underwear, boxer jocks, hardshell or softshell pants, a fleece pullover, a hardshell jacket, warm socks, insulated boots, and high gaiters.'; 
+		trailChecklist.appendChild(clothing);
+	} else if(temp < 10){
 		clothing.innerHTML = 'Temperatue is ' + weatheritems[0].temp + '°C, please bring a base layer with insulating properties such as wool or budget-friendly synthetic materials; an insulating, removable middle layer; and a waterproof/windproof outer layer.'; 
 		trailChecklist.appendChild(clothing);
 	} else if(temp < 23) {
