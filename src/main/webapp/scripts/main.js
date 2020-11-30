@@ -122,9 +122,9 @@ function calculateLevel() {
 
 //function to display recommended trail level
 function displayLevel(sum) {
-    var level_1 = "Easy";
-    var level_2 = "Intermediate";
-    var level_3 = "Difficult";
+    var level_1 = "Easy, because you don't exercise enough";
+    var level_2 = "Intermediate, beacause you do moderate exercise.";
+    var level_3 = "Difficult, beacause you do exercise almost everyday.";
     var error = "Calculation misfunction";
     var fitnessLevel;
     if (sum >= 3) {
