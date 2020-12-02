@@ -129,15 +129,15 @@ function displayLevel(sum) {
     var fitnessLevel;
     if (sum >= 3) {
         document.getElementById('displayLevel').innerHTML = level_3;
-        document.getElementById('levelReason').innerHTML = 'Because you do exercise almost everyday.';
+        document.getElementById('levelReason').innerHTML = 'Because you do exercise almost everyday and do not have joint/obese problem.';
         fitnessLevel = level_3;
     } else if (sum == 2) {
         document.getElementById('displayLevel').innerHTML = level_2;
-        document.getElementById('levelReason').innerHTML = 'Because you do moderate exercise.';
+        document.getElementById('levelReason').innerHTML = 'Because you do moderate exercise or you might have joint/obese problem.';
         fitnessLevel = level_2;
     } else if (sum <= 1) {
         document.getElementById('displayLevel').innerHTML = level_1;
-        document.getElementById('levelReason').innerHTML = 'Because you do not exercise enough';
+        document.getElementById('levelReason').innerHTML = 'Because you do not exercise enough or you have joint/obese problem';
         fitnessLevel = level_1;
     } else {
         document.getElementById('displayLevel').innerHTML = error;
