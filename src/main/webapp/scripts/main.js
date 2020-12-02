@@ -124,7 +124,7 @@ function calculateLevel() {
 function displayLevel(sum) {
 	var level_1 = "Easy";
     var level_2 = "Intermediate";
-    var level_3 = "Difficultx";
+    var level_3 = "Difficult";
     var error = "Calculation misfunction";
     var fitnessLevel;
     if (sum >= 3) {
