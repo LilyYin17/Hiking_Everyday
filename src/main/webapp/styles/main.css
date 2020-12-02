@@ -5,7 +5,7 @@
 }
 
 body {
-	background: #434343;
+	background: #DF574B;
 	color: #000000;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 300;
@@ -274,10 +274,11 @@ ul {
  * footer section
  */
 footer {
-	background: #434343;
+	background: #DF574B;
 	font-size: 0.8em;
 	height: 200px;
 	position: relative;
+	color: white;
 }
 
 footer p {
