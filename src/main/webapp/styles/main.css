@@ -124,6 +124,30 @@ ul {
 	color: #FFFFFF;
 }
 
+input[type=button] {
+  	background-color: white;
+  	font-size: 16px;
+  	padding: 12px 28px;
+  	border-radius: 12px;
+  	border: 2px solid #f44336;
+  	transition-duration: 0.4s;
+  }
+  
+input[type=button]:hover {
+  	background-color: #f44336;
+  	color: white;
+  }
+  
+input[type=text], input[type=number] {
+  	width: 50%;
+  	padding: 12px 20px;
+  	margin: 8px 0;
+  	display: inline-block;
+  	border: 1px solid #ccc;
+  	border-radius: 4px;
+  	box-sizing: border-box;
+  }
+
 #home-btn {
 	cursor: pointer;
 }
@@ -136,6 +160,30 @@ ul {
  */
 .main-section {
 	background: #F3BB43;
+}
+/**
+ * main section
+ */
+#profile-form {
+	padding: 50px;
+	font-size: large;
+	font-weight: bold;
+}
+
+/**
+ * format select
+ */
+ select {
+ 	background-color: white;
+ 	width: 25%;
+  	padding: 12px 20px;
+  	margin: 8px 0;
+  	border: 1px solid #ccc;
+  	border-radius: 4px;
+  	font-size: 15px;
+ }
+.select-items {
+	background-color: #f44336;
 }
 
 /**

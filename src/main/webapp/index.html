@@ -39,21 +39,20 @@
             			<br>
             			<label for="name">Name:</label><br>
             			<input type="text" id="user-name" name="name" value="Preferred name"><br><br>
-            			<br>
             			<label for="age">Age:</label><br>
             			<input type="number" min="0" id="age" name="age"><br><br>
-            			<br>
             			<label for="gender">Gender:</label><br>
             			<select id="gender" name="gender">
+            				<option value="0">Please select</option>
                 			<option value="male">Male</option>
                 			<option value="female">Female</option>
                 			<option value="other">Other</option>
                 			<option value="nosay">Prefer not to say</option>
             			</select>
             			<br><br>
-            			<br>
             			<label for="exercise">How many times per week would you exercise? (Each exercise over 20 mins)</label><br>
             			<select id="exercise" name="exercise">
+            				<option value="0">Please select</option>
                     		<option value="4">Everyday(Almost)</option>
                     		<option value="3">2 - 3 days per week</option>
                     		<option value="2">Once per week</option>
@@ -63,6 +62,7 @@
             			<br>
             			<label for="joint">Do you think you have joint problem?</label><br>
             			<select id="joint" name="joint">
+            				<option value="0">Choose Yes or No</option>
                     		<option value="-1">Yes</option>
                     		<option value="0">No</option>
             			</select>
@@ -70,13 +70,16 @@
             			<br>
             			<label for="obese">Do you think you overweight or obese?</label><br>
             			<select id="obese" name="obese">
+            				<option value="0">Choose Yes or No</option>
                     		<option value="-1">Yes</option>
                     		<option value="0">No</option>
             			</select>
+            			
             			<br><br>
         			</form>
 
-        			<input type="button" value="Calculate" onclick="calculateLevel();">
+        			<input type="button" id="calculate-btn" value="Calculate" onclick="calculateLevel();"
+        			       format="background-color: #f44336;">
         			<p>If you click the "Calculate" button, recommended trail level will appear.</p>
         			<br><br>
         			<label><b>Hi, <span id="displayName">____</span></b></label>
