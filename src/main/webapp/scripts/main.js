@@ -122,19 +122,22 @@ function calculateLevel() {
 
 //function to display recommended trail level
 function displayLevel(sum) {
-    var level_1 = "Easy, because you don't exercise enough";
-    var level_2 = "Intermediate, beacause you do moderate exercise.";
-    var level_3 = "Difficult, beacause you do exercise almost everyday.";
+	var level_1 = "Easy";
+    var level_2 = "Intermediate";
+    var level_3 = "Difficultx";
     var error = "Calculation misfunction";
     var fitnessLevel;
     if (sum >= 3) {
         document.getElementById('displayLevel').innerHTML = level_3;
+        document.getElementById('levelReason').innerHTML = 'Because you do exercise almost everyday.';
         fitnessLevel = level_3;
     } else if (sum == 2) {
         document.getElementById('displayLevel').innerHTML = level_2;
+        document.getElementById('levelReason').innerHTML = 'Because you do moderate exercise.';
         fitnessLevel = level_2;
     } else if (sum <= 1) {
         document.getElementById('displayLevel').innerHTML = level_1;
+        document.getElementById('levelReason').innerHTML = 'Because you do not exercise enough';
         fitnessLevel = level_1;
     } else {
         document.getElementById('displayLevel').innerHTML = error;
