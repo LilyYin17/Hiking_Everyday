@@ -5,7 +5,7 @@
 }
 
 body {
-	background: #DF574B;
+	background: #434343;
 	color: #000000;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 300;
@@ -118,6 +118,10 @@ ul {
 
 .container>header span {
 	color: #FBAF41;
+}
+
+.container>header {
+	color: #FFFFFF;
 }
 
 #home-btn {
@@ -281,7 +285,7 @@ ul {
  * footer section
  */
 footer {
-	background: #DF574B;
+	background: #434343;
 	font-size: 0.8em;
 	height: 200px;
 	position: relative;
