@@ -68,6 +68,7 @@ ul {
 	background-color: #333333;
 	color: white;
 	border: 5px solid #333333;
+	cursor: pointer;
 }
 
 #welcome-msg {
@@ -83,6 +84,7 @@ ul {
 	background-color: #333333;
 	color: white;
 	border: 5px solid #333333;
+	cursor: pointer;
 }
 
 /**
@@ -148,13 +150,6 @@ input[type=text], input[type=number] {
   	box-sizing: border-box;
   }
 
-#home-btn {
-	cursor: pointer;
-}
-
-#profile-btn {
-	cursor: pointer;
-}
 /**
  * main section
  */
@@ -281,6 +276,7 @@ input[type=text], input[type=number] {
   	border-radius: 12px;
   	border: 2px solid #f44336;
   	transition-duration: 0.4s;
+  	cursor:pointer;
 }
 
 .trail-direction:hover {
@@ -295,6 +291,7 @@ input[type=text], input[type=number] {
   	border-radius: 12px;
   	border: 2px solid #f44336;
   	transition-duration: 0.4s;
+  	cursor: pointer;
 }
 
 .checklist-btn:hover {
@@ -373,7 +370,7 @@ footer p {
 }
 
 footer p.title {
-	font-size: 1.2em;
+	font-size: 1.5em;
 	padding: 15px;
 }
 
@@ -385,6 +382,7 @@ footer ul {
 
 footer ul li {
 	flex: 1;
+	font-size: 1em;
 }
 
 .modal {
@@ -406,9 +404,10 @@ footer ul li {
 	position: relative;
 	background-color: #fefefe;
 	margin: auto;
-	padding: 0;
+	padding-bottom: 2rem;
 	border: 1px solid #888;
 	width: 80%;
+	min-height:30%;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
  	-webkit-animation-name: animatetop;
 	-webkit-animation-duration: 0.4s; 
@@ -441,6 +440,7 @@ footer ul li {
 	text-decoration: none;
 	cursor: pointer;
   }
+  
 
   .modal-header {
 	padding: 2px 16px;
@@ -453,7 +453,19 @@ footer ul li {
   }
 
   .modal-footer {
+  	position: absolute;
+  	min-width: 100%;
+  	bottom: 0;
 	padding: 2px 16px;
 	background-color: #F3BB43;
 	color: white;
+	height:2rem;
+  }
+  
+  .btn-primary{
+  	cursor: pointer;
+  }
+
+  #submit-filter{
+  	cursor:pointer;
   }
