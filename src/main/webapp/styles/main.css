@@ -274,6 +274,34 @@ input[type=text], input[type=number] {
 	text-align: center;
 }
 
+.trail-direction {
+	background-color: white;
+  	font-size: 16px;
+  	padding: 12px 28px;
+  	border-radius: 12px;
+  	border: 2px solid #f44336;
+  	transition-duration: 0.4s;
+}
+
+.trail-direction:hover {
+  	background-color: #f44336;
+  	color: white;
+  }
+  
+.checklist-btn {
+	background-color: white;
+  	font-size: 16px;
+  	padding: 12px 28px;
+  	border-radius: 12px;
+  	border: 2px solid #f44336;
+  	transition-duration: 0.4s;
+}
+
+.checklist-btn:hover {
+  	background-color: #f44336;
+  	color: white;
+  }
+
 /**
  * item
  */

@@ -123,7 +123,7 @@ function addDetails(itemList, trail){
 	
 	//add Gear & Clothing section
 	var checklist = $create('button', {
-		class : 'checklist-btn'
+		className: 'checklist-btn',
 	});
 	checklist.innerHTML = 'Click to see checklist:';
 	checklist.onclick = function(){
