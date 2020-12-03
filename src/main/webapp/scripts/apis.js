@@ -117,6 +117,8 @@ function register(fitnessLevel){
  */
 function saveFilter(){
 	console.log('in saveFilter function');
+	hideModal();
+
 	//check whether user click to enable the filter
 	var checkBtn = document.getElementById("Enable-Filter");
 	var check = checkBtn.dataset.check;

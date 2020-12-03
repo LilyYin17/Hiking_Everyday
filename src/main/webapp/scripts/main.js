@@ -26,7 +26,7 @@ function init() {
 	document.querySelector('#Myfitness-btn').addEventListener('click', changeFilter_Myfitness);
 	document.getElementById('submit-filter').addEventListener('click', saveFilter);
 	document.getElementById('Enable-Filter').addEventListener('click',changeFilterOption);
-};
+}
 
 //initMap function
 function initMap() {
